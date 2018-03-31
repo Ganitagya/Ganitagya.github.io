@@ -13,12 +13,10 @@
 
 
 
-| Setting   | Description    |
-|:----------|:---------------|
-| broker    | the MQTT Broker URI (tcp://[hostname]:[port])|
-| id        | The MQTT Client ID |         
-| user      | The UserID used when connecting to the MQTT broker |
-| password  | The Password used when connecting to the MQTT broker |
-| topic     | Topic on which the message is published |
-| qos       | MQTT Quality of Service |
-| message   | The message payload |
+| Project   |  Technologies used  |  Description    |
+|:----------|  :---------------| :---------------|
+| Linux Kernel Profiling    | C, Probing, L i n u x Kernel Modules |  the MQTT Broker URI (tcp://[hostname]:[port])|
+| Insert-Generation        |   Python               |  The MQTT Client ID |         
+| SQL-Parser      |     C++                     |  The UserID used when connecting to the MQTT broker |
+| Snake-Game  |           C++               |  The Password used when connecting to the MQTT broker |
+| Virtual Tennis     |    JavaScript, HTML                      |  Topic on which the message is published |

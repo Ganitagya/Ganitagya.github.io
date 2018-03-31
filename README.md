@@ -8,10 +8,10 @@ This is a platform to share my experiences and learning.
 
 # My Work
 ## Blogs I've Written
-[FLOGO - Create Custom Solutions and deploy on Edge in a Snap of Fingers](https://community.tibco.com/wiki/flogo-create-custom-solutions-and-deploy-edge-snap-fingers)
+1. [FLOGO - Create Custom Solutions and deploy on Edge in a Snap of Fingers](https://community.tibco.com/wiki/flogo-create-custom-solutions-and-deploy-edge-snap-fingers)
 </br>
 
-[Deploying BWCE Microservices to Docker Swarm Setup in AWS](https://community.tibco.com/wiki/developing-and-deploying-applications-tibco-businessworkstm-container-edition-docker-swarm)
+2. [Deploying BWCE Microservices to Docker Swarm Setup in AWS](https://community.tibco.com/wiki/developing-and-deploying-applications-tibco-businessworkstm-container-edition-docker-swarm)
 </br>
 ## Projects
 https://github.com/Ganitagya/flogo-contrib
@@ -32,7 +32,7 @@ Below is the collection of some of my works which I did during my UnderGrad
 |:----------|  :---------------| :---------------|
 | Linux Kernel Profiling|C, Probing, L i n u x Kernel Modules|A debugging tool providing various lock statistics and CPU utilization to optimize and enhance the system resource utilization by applications. </br> **GitHub Link :** https://github.com/Ganitagya/Lockstat |
 | Insert-Generation |Python |Tool to copy CLOB and BLOB data from tables, not available in other tools like TOAD, SQL Developer</br> **GitHub Link :**  https://github.com/Ganitagya/Insert-Generation |        
-| SQL-Parser|C++ |Generates SELECT queries corresponding to DML queries.| https://github.com/Ganitagya/SQL-Parser |
+| SQL-Parser|C++ |Generates SELECT queries corresponding to DML queries.**GitHub Link :** https://github.com/Ganitagya/SQL-Parser |
 | Snake-Game  |C++ |The age old game of snakes using Doubly-Linked lists.</br> **GitHub Link :** https://github.com/Ganitagya/Snake | 
 | Virtual Tennis|JavaScript, HTML| A single player game wherein a player has to hit a ball in his court with paddle maneuvered using mouse.</br> **GitHub Link :**  https://github.com/Ganitagya/Virtual-Tennis |
 

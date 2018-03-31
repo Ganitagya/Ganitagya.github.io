@@ -1,6 +1,6 @@
-## Welcome to Akash's GitHub Pages
+# Welcome to Akash's GitHub Pages
 
-# About Me #
+## About Me 
 I am Akash Mahapatra, a singing travelling coder... I love to read, travel and code, learn technologies, build solutions around IoT integration | Analytics | follow open source and very much fascinated by the fact that machines can be taught to take decisions on their own.
 
 This is a platform to share my experiences and learning.
@@ -10,20 +10,20 @@ Blogs I've Written
 
 [https://community.tibco.com/wiki/developing-and-deploying-applications-tibco-businessworkstm-container-edition-docker-swarm](Deploying BWCE Microservices to Docker Swarm Setup in AWS)
 
-##My Work##
+## My Work
 
 https://github.com/Ganitagya/flogo-contrib
 
 
-| Project   |  Technologies used  |  Description    |   GitHub Link   |
-|:----------|  :---------------| :---------------|:---------------|
-|Amazon Apparel Recommendation|  Python3, Pandas, Matplotlib| A recommending bot which recommends apparels depending on your search query using wordtovec, TF_IDF algorithms. (work in Progress )|https://github.com/Ganitagya/Applied-Artificial-Intellegence/tree/master/Applied_AI_UseCases/AmaZon_Apparel_Recommendation|
-|Flogo MQTT Publisher|  Golang | Flogo activity to provide your flogo application the ability to publish a message on MQTT topic.|https://github.com/Ganitagya/flogo-contrib/tree/master/activity/MQTT_noCert </br> https://github.com/Ganitagya/flogo-contrib/tree/master/activity/MQTT_Pub_TLS |
-|Flogo File Reader |  Golang| Flogo activity to provide the ability to your Flogo application to read files|https://github.com/Ganitagya/flogo-contrib/tree/master/activity/ReadFile|
-|Flogo MySQL Fetch| Golang | This activity provides your flogo application the ability to make a select query and returns the table selected as a JSON string.|https://github.com/Ganitagya/flogo-contrib/tree/master/activity/mySQLFetch|
-|Flogo Directory Poller|  Golang |This triggers provides your flogo application the ability to poll a bdirectory continuosly and notify whenever anything changes inside that directory.|https://github.com/Ganitagya/Custom_flogo_activity/tree/master/dirpoll|
+| Project   |  Technologies used  |  Description    | 
+|:----------|  :---------------| :---------------|
+|Amazon Apparel Recommendation|  Python3, Pandas, Matplotlib| A recommending bot which recommends apparels depending on your search query using wordtovec, TF_IDF algorithms. (work in Progress ) </br> GitHub Link : https://github.com/Ganitagya/Applied-Artificial-Intellegence/tree/master/Applied_AI_UseCases/AmaZon_Apparel_Recommendation|
+|Flogo MQTT Publisher|  Golang | Flogo activity to provide your flogo application the ability to publish a message on MQTT topic.</br> GitHub Link :https://github.com/Ganitagya/flogo-contrib/tree/master/activity/MQTT_noCert </br> https://github.com/Ganitagya/flogo-contrib/tree/master/activity/MQTT_Pub_TLS |
+|Flogo File Reader |  Golang| Flogo activity to provide the ability to your Flogo application to read files</br> GitHub Link :https://github.com/Ganitagya/flogo-contrib/tree/master/activity/ReadFile|
+|Flogo MySQL Fetch| Golang | This activity provides your flogo application the ability to make a select query and returns the table selected as a JSON string.</br> GitHub Link :https://github.com/Ganitagya/flogo-contrib/tree/master/activity/mySQLFetch|
+|Flogo Directory Poller|  Golang |This triggers provides your flogo application the ability to poll a bdirectory continuosly and notify whenever anything changes inside that directory</br> GitHub Link : https://github.com/Ganitagya/Custom_flogo_activity/tree/master/dirpoll|
 
-# Projects during Engineering #
+## Projects during Engineering 
 Below is the collection of some of my works which I did during my UnderGrad 
 
 | Project   |  Technologies used  |  Description    |   GitHub Link   |
@@ -35,8 +35,8 @@ Below is the collection of some of my works which I did during my UnderGrad
 | Virtual Tennis|JavaScript, HTML| A single player game wherein a player has to hit a ball in his court with paddle maneuvered using mouse. | https://github.com/Ganitagya/Virtual-Tennis |
 
 
-# Other Works #
+## Other Works 
 
-# Golang Tutorial #
+## Golang Tutorial 
 I am creating a collection of Golang codes explaining Golang concepts and its behaviour
 https://github.com/Ganitagya/GoLang_Tutorial

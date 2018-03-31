@@ -26,7 +26,7 @@ https://github.com/Ganitagya/flogo-contrib
 |Flogo MySQL Fetch| Golang | This activity provides your flogo application the ability to make a select query and returns the table selected as a JSON string.</br> **GitHub Link :** https://github.com/Ganitagya/flogo-contrib/tree/master/activity/mySQLFetch|
 |Flogo Directory Poller|  Golang |This triggers provides your flogo application the ability to poll a bdirectory continuosly and notify whenever anything changes inside that directory</br> **GitHub Link :** https://github.com/Ganitagya/Custom_flogo_activity/tree/master/dirpoll|
 
-## Projects during Engineering 
+## Projects during UnderGrad 
 Below is the collection of some of my works which I did during my UnderGrad 
 
 | Project   |  Technologies used  |  Description    |   

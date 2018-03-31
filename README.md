@@ -1,37 +1,20 @@
 ## Welcome to Akash's GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/Ganitagya/Ganitagya.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Ganitagya/Ganitagya.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Linux Kernel Profiling | (B.E. Project)Technologies used: C, Probing, L i n u x Kernel Modules.|Description: A debugging tool providing various lock statistics and CPU utilization to
+optimize and enhance the system resource utilization by applications.
+GitHub Link: https://github.com/Ganitagya/Lockstat
+Insert-Generation Programming Languages Used: Python
+Description: Tool to copy CLOB and BLOB data from tables, not available in other tools
+like TOAD, SQL Developer, etc.
+GitHub Link: https://github.com/Ganitagya/Insert-Generation
+SQL-Parser Programming Languages Used : C++
+Description: Generates SELECT queries corresponding to DML queries.
+GitHub Link: https://github.com/Ganitagya/SQL-Parser
+Snake-Game Programming Language Used: C++
+Description: The age old game of snakes using Doubly-Linked lists.
+GitHub Link: https://github.com/Ganitagya/Snake
+Virtual Tennis Programming Languages Used : JavaScript, HTML
+Description: A single player game wherein a player has to hit a ball in his court with
+paddle maneuvered using mouse.
+Github Link : https://github.com/Ganitagya/Virtual-Tennis

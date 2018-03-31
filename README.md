@@ -7,11 +7,13 @@ This is a platform to share my experiences and learning.
 
 
 # My Work
+
 ## Blogs I've Written
 1. [FLOGO - Create Custom Solutions and deploy on Edge in a Snap of Fingers](https://community.tibco.com/wiki/flogo-create-custom-solutions-and-deploy-edge-snap-fingers)
 
 2. [Deploying BWCE Microservices to Docker Swarm Setup in AWS](https://community.tibco.com/wiki/developing-and-deploying-applications-tibco-businessworkstm-container-edition-docker-swarm)
 </br>
+
 
 ## Projects
 
@@ -25,6 +27,7 @@ https://github.com/Ganitagya/flogo-contrib
 |Flogo File Reader |  Golang| Flogo activity to provide the ability to your Flogo application to read files</br> **GitHub Link :** https://github.com/Ganitagya/flogo-contrib/tree/master/activity/ReadFile|
 |Flogo MySQL Fetch| Golang | This activity provides your flogo application the ability to make a select query and returns the table selected as a JSON string.</br> **GitHub Link :** https://github.com/Ganitagya/flogo-contrib/tree/master/activity/mySQLFetch|
 |Flogo Directory Poller|  Golang |This triggers provides your flogo application the ability to poll a bdirectory continuosly and notify whenever anything changes inside that directory</br> **GitHub Link :** https://github.com/Ganitagya/Custom_flogo_activity/tree/master/dirpoll|
+
 
 ## Projects during UnderGrad 
 Below is the collection of some of my works which I did during my UnderGrad 

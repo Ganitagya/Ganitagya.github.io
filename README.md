@@ -8,9 +8,10 @@ This is a platform to share my experiences and learning.
 
 # My Work
 ## Blogs I've Written
-[https://community.tibco.com/wiki/flogo-create-custom-solutions-and-deploy-edge-snap-fingers](FLOGO - Create Custom Solutions and deploy on Edge in a Snap of Fingers)
+[FLOGO - Create Custom Solutions and deploy on Edge in a Snap of Fingers](https://community.tibco.com/wiki/flogo-create-custom-solutions-and-deploy-edge-snap-fingers)
+</br>
 
-[https://community.tibco.com/wiki/developing-and-deploying-applications-tibco-businessworkstm-container-edition-docker-swarm](Deploying BWCE Microservices to Docker Swarm Setup in AWS)
+[Deploying BWCE Microservices to Docker Swarm Setup in AWS](https://community.tibco.com/wiki/developing-and-deploying-applications-tibco-businessworkstm-container-edition-docker-swarm)
 </br>
 ## Projects
 https://github.com/Ganitagya/flogo-contrib

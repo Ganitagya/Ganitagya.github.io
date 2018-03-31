@@ -15,8 +15,8 @@
 
 | Project   |  Technologies used  |  Description    |
 |:----------|  :---------------| :---------------|
-| Linux Kernel Profiling    | C, Probing, L i n u x Kernel Modules |  the MQTT Broker URI (tcp://[hostname]:[port])|
-| Insert-Generation        |   Python               |  The MQTT Client ID |         
-| SQL-Parser      |     C++                     |  The UserID used when connecting to the MQTT broker |
-| Snake-Game  |           C++               |  The Password used when connecting to the MQTT broker |
-| Virtual Tennis     |    JavaScript, HTML                      |  Topic on which the message is published |
+| Linux Kernel Profiling    | C, Probing, L i n u x Kernel Modules |  A debugging tool providing various lock statistics and CPU utilization to optimize and enhance the system resource utilization by applications.|
+| Insert-Generation        |   Python               |  Tool to copy CLOB and BLOB data from tables, not available in other tools like TOAD, SQL Developer|         
+| SQL-Parser      |     C++                     |  Generates SELECT queries corresponding to DML queries. |
+| Snake-Game  |           C++               |  The age old game of snakes using Doubly-Linked lists. |
+| Virtual Tennis     |    JavaScript, HTML                      |  A single player game wherein a player has to hit a ball in his court with paddle maneuvered using mouse. |

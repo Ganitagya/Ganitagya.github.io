@@ -1,1 +1,0 @@
-# Ganitagya.github.io

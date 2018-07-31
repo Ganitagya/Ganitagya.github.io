@@ -311,8 +311,8 @@
 			background: #f00;
 
 			img {
-				width: 48px;
-				height: 48px;
+				width: 58px;
+				height: 58px;
 			}
 		}
 
@@ -750,7 +750,7 @@
 
 			&.one {
 				background-color: #81918E;
-				background-image: url('../../images/banner.jpg');
+				background-image: url('../../images/banner.jpg'); opacity:0.1;
 			}
 
 			&.two {

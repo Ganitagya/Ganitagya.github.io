@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "Akash Mahapatra"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "A singing travelling coder... building solutions around IoT integration | Analytics and following open source and very much fascinated by the fact that machines can be taught to take decisions on their own."
   location         : "Pune | India"
   email            :

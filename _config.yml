@@ -113,7 +113,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/Ganitagya"
+  github           : "Ganitagya"
   gitlab           :
   google_plus      :
   keybase          :
@@ -277,4 +277,3 @@ defaults:
     values:
       layout: single
       author_profile: true
-      

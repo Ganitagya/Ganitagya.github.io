@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mahatechbharats on akash_mahapatra</title>
-    <link>http://localhost:1313/mahatechbharat/</link>
+    <link>https://ganitagya.github.io/mahatechbharat/</link>
     <description>Recent content in Mahatechbharats on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Fri, 23 Aug 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/mahatechbharat/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ganitagya.github.io/mahatechbharat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Draupadi’s Swayamvar: A Tale of Power, Skill, and Destiny</title>
-      <link>http://localhost:1313/mahatechbharat/draupadis_swayamvar/</link>
+      <link>https://ganitagya.github.io/mahatechbharat/draupadis_swayamvar/</link>
       <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mahatechbharat/draupadis_swayamvar/</guid>
+      <guid>https://ganitagya.github.io/mahatechbharat/draupadis_swayamvar/</guid>
       <description>Draupadi: A Princess Beyond Compare Link to heading Draupadi, the princess of Panchala, was a woman of extraordinary brilliance and beauty. Renowned for her exceptional skills in history, geography, art, and warfare, she was a force to be reckoned with. King Drupad, her father, faced a daunting task: finding a suitable husband for a woman who surpassed most men in intellect and ability.&#xA;Arjuna, the Third Pandava Link to heading Arjuna, the third son of Kunti, was renowned as one of the greatest warriors of his time.</description>
     </item>
     <item>
       <title>Enterprise OAuth With Draupadi&#39;s Swayamvar</title>
-      <link>http://localhost:1313/mahatechbharat/oauth/</link>
+      <link>https://ganitagya.github.io/mahatechbharat/oauth/</link>
       <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/mahatechbharat/oauth/</guid>
+      <guid>https://ganitagya.github.io/mahatechbharat/oauth/</guid>
       <description>Darupadi&amp;rsquo;s Swayamvar - Enterprise OAuth Link to heading Coming Soon &amp;hellip;</description>
     </item>
   </channel>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Modern Event-Driven Application Development using TIBCO and AsyncAPI · akash_mahapatra
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Akash Mahapatra">
+<meta name="description" content="Modern Event-Driven Application Development using TIBCO and AsyncAPI">
+<meta name="keywords" content="blog, solutions architect, enterprise architect, data engineer, aws, azure, gcp, cloud, devops, devsecops, api, api management, data management, kafka">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Modern Event-Driven Application Development using TIBCO and AsyncAPI">
+  <meta name="twitter:description" content="Modern Event-Driven Application Development using TIBCO and AsyncAPI">
+
+<meta property="og:url" content="http://localhost:1313/solution-architecture/bw-asyncapi/">
+  <meta property="og:site_name" content="akash_mahapatra">
+  <meta property="og:title" content="Modern Event-Driven Application Development using TIBCO and AsyncAPI">
+  <meta property="og:description" content="Modern Event-Driven Application Development using TIBCO and AsyncAPI">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="solution-architecture">
+    <meta property="article:tag" content="Asyncapi">
+    <meta property="article:tag" content="Tibco">
+    <meta property="article:tag" content="Enterprise Integration">
+    <meta property="article:tag" content="Flogo">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/solution-architecture/bw-asyncapi/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      akash_mahapatra
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/Solution-Architecture/">Solution-Architectures</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/TEXperiments/">TEXperiments</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/MahaTechBharat/">MahaTechBharat</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/solution-architecture/bw-asyncapi/">
+          Modern Event-Driven Application Development using TIBCO and AsyncAPI
+        </a>
+      </h1>
+    </header>
+
+    <p>We have all heard about the term “API First Design” and “Cloud-Native Applications” (they generally walk hand in hand). APIs are omnipresent and sometimes we get caught up so much with them as the way of impelling data around and other technical aspects involved with the data formats, various protocols to be used, etc. that we forget they are truly about solving customer problems, enhancing developer experience, and integrating solutions.<br>
+Traditionally, APIs have been thought of as a wrapper around a set of protocols that enables different applications or logical units to communicate as a channel supporting data exchange. But recently with the rate with which various new technologies have been developed like GRPC, GraphQl, Web-sockets, etc. applications are required to conform to the rapidly changing message exchange patterns and eventually APIs have to bear the weight of adapting to the changing formats which may take on different characteristics, be it Request/Response (REST over HTTP), Batch Based or Publish/Subscribe (events or streaming) based on the conditions. APIs help a platform to open up and evolve by accommodating new behaviors as new protocols and design patterns get introduced in the market, beyond the situations they were initially designed in, which may force even the architectural approach to change, for instance, from monolithic to microservices-based to all the way to event-driven, allowing the applications to share events outside the platform and letting developers react and build on top of events.</p>
+<p>Nearly every application in all modern infrastructures uses APIs to connect with data sources, third party data services or other applications. With so many applications and developers dealing with APIs, it became crucial to creating a description format for API services that could be used as a standard that is vendor-neutral and platform agnostic in order for accelerating the vision of a truly connected world. It’s a pain, not having a contract similar to RAML or OpenAPI for all your messages in your systems. This is often important in modern infrastructures involving multiple interdependent applications sharing messages amongst themselves. Consider a scenario where we tend to push messages into brokers where we may have many consumers, and a case arises where several times the producer of the messages suddenly changes the message format forcing us to fall into a mess of cascading effect of changing the interdependent applications and keeping track of these changes.</p>
+<p>REST already had the OpenAPI, RAML, and other specification formats for generating a machine-readable definition of APIs but with an increasing number of applications in IoT space and with the emergence of new models of architectures, like serverless and event processing, a new standard of machine-readable specifications are required for applications dealing with message-driven APIs.Open-source project AsyncAPI is one such community where developers are working on these new standards. AsyncAPI is an API documentation specification for how event-driven services communicate with one another. It is a specification like the OpenAPI specifically designed to define contracts and dealing with the kind of difficulties mentioned above.</p>
+<h2 id="asyncapi-specification">
+  AsyncAPI Specification
+  <a class="heading-link" href="#asyncapi-specification">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The AsyncAPI Specification is a protocol-agnostic standard used to describe and document message-driven APIs in a machine-readable format, so you can use it for APIs that work over any protocol (e.g., AMQP, MQTT, WebSockets, Kafka, STOMP, HTTP, etc).</p>
+<p>The AsyncAPI Specification defines a set of files required to describe such an API which can then be used to create utilities, such as documentation, integration and/or testing tools.</p>
+<h2 id="modern-event-driven-application-development-with-tibco">
+  Modern Event-Driven Application Development with TIBCO
+  <a class="heading-link" href="#modern-event-driven-application-development-with-tibco">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>TIBCO has been closely associated with the project since its early days enabling enterprises to build use cases for event-driven APIs. Now coming to the sum and substance of this article, i.e How to develop applications using the AsyncAPI specification and Project Flogo.
+Below are the steps to develop a simple publish/subscribe application over the MQTT protocol.</p>
+<h3 id="environment-setup">
+  Environment Setup
+  <a class="heading-link" href="#environment-setup">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Before going forward and developing we need to have certain requirements met, you need to have the following installed in your machine</p>
+<ol>
+<li><a href="https://git-scm.com/downloads"  class="external-link" target="_blank" rel="noopener">git</a></li>
+<li><a href="https://www.docker.com/"  class="external-link" target="_blank" rel="noopener">Docker</a></li>
+<li><a href="https://go.dev/dl/"  class="external-link" target="_blank" rel="noopener">Golang</a></li>
+<li><a href="https://tibcosoftware.github.io/flogo/getting-started/getting-started-cli/"  class="external-link" target="_blank" rel="noopener">Flogo CLI</a></li>
+</ol>
+<h3 id="developing-the-flogo-app">
+  Developing the Flogo App
+  <a class="heading-link" href="#developing-the-flogo-app">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Once you have set up your machine with the required software as mentioned above, you can start with the development.</p>
+<ol>
+<li>
+<p>Get the Project Flogo extensions to support AsyncAPI: These will help you to convert the AsyncAPI specification to the corresponding Flogo application.<br>
+<code>git clone https://github.com/project-flogo/asyncapi.git</code><br>
+<code>cd asyncapi/</code><br>
+<code>go install</code></p>
+</li>
+<li>
+<p>Make sure the above command creates an executable binary at the location <code>$GOPATH/bin</code> called <code>“asyncapi”</code>.</p>
+</li>
+<li>
+<p>Create a new folder and name it <code>FlogoAsyncMessaging</code>. Go to the newly created folder and create an <code>AsyncAPI document file</code>. An AsyncAPI document is a file that defines and annotates the different components of a specific Event-Driven API.<br>
+<code>mkdir FlogoAsyncMessaging</code><br>
+<code>cd FlogoAsyncMessaging</code><br>
+<code>vi asyncapi.yml</code>\</p>
+</li>
+</ol>
+<p>The content of AsyncAPI document file <code>asyncapi.yml</code> can be obtained from <a href="https://github.com/project-flogo/asyncapi/blob/master/examples/mqtt/asyncapi.yml"  class="external-link" target="_blank" rel="noopener">here</a>.</p>
+<ol start="4">
+<li>
+<p>Creating a Flogo application out of the <code>asyncapi.yml</code> AsyncAPI document file.<br>
+For creating a Flogo application you need to generate the JSON file corresponding to the Go code generated above:<br>
+<code>asyncapi -input asyncapi.yml -type flogodescriptor</code></p>
+</li>
+<li>
+<p>The resulting outputs are two files getting created namely <code>flogo.json and support.go</code>.</p>
+</li>
+<li>
+<p>Create the Flogo application by using the <code>flogo.json</code> file created above.<br>
+<code>flogo create -f flogo.json mqtt</code><br>
+Followed by the below set of commands:<br>
+<code>mv support.go mqtt/src/</code><br>
+<code>cd mqtt</code><br>
+<code>flogo build</code></p>
+</li>
+<li>
+<p>The above command creates a Flogo executable in the location mqtt/bin namely <code>mqtt</code>.<br>
+Alternatively, Flogo CLI also allows you to generate the Go code from the specification defined in the <code>AsyncAPI document file</code>.<br>
+<code>asyncapi -input asyncapi.yml -type flogoapiapp -output .</code></p>
+</li>
+<li>
+<p>The resulting outputs are three files getting created namely <code>app.go, go.mod, and support.go</code>. We can directly build <code>app.go</code> into a working executable:<br>
+<code>go build</code><br>
+This command creates a new executable namely <code>main</code></p>
+</li>
+</ol>
+<h2 id="testing-the-flogo-application">
+  Testing the Flogo Application
+  <a class="heading-link" href="#testing-the-flogo-application">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li>
+<p>Open a terminal (if you are using windows, you can use git bash) and start the MQTT server. If you don’t have a local server you can use the below command to start a docker container.
+<code>docker run -it -p 1883:1883 -p 9001:9001 eclipse-mosquitto</code></p>
+</li>
+<li>
+<p>Open another terminal window and go to the location where you created the Flogo executable and run it.<br>
+<code>cd FlogoAsyncMessaging/mqtt/bin</code><br>
+<code>./mqtt</code><br>
+This is an MQTT subscriber that is connected to the MQTT broker started in step 1 of Testing the Flogo application.</p>
+</li>
+<li>
+<p>In a new terminal start an MQTT publisher and start publishing messages and see that the subscriber has started getting the data being sent.<br>
+If you don’t have a local MQTT server and are using the docker container as mentioned in step 1 then follow the below steps.<br>
+<code>docker ps</code><br>
+<code>docker exec -it &lt;MOSQUITTO CONTAINER ID&gt; /bin/sh</code><br>
+The syntax to publish messages to the MQTT broker is:<br>
+<code>mosquitto_pub -m ‘{“message”: “hello world”}’ -t message/1</code></p>
+</li>
+<li>
+<p>If you configured everything as mentioned, you should see messages being consumed by the Flogo application as created using the AsyncAPI specification.</p>
+</li>
+</ol>
+<hr>
+<h2 id="references">
+  References
+  <a class="heading-link" href="#references">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li><a href="https://www.asyncapi.com/"  class="external-link" target="_blank" rel="noopener">https://www.asyncapi.com/</a></li>
+<li><a href="https://github.com/OAI/OpenAPI-Specification"  class="external-link" target="_blank" rel="noopener">https://github.com/OAI/OpenAPI-Specification</a></li>
+<li><a href="https://github.com/project-flogo/asyncapi"  class="external-link" target="_blank" rel="noopener">https://github.com/project-flogo/asyncapi</a></li>
+<li><a href="https://www.tibco.com/blog/2019/08/21/tibco-teams-up-with-asyncapi-to-advance-modern-event-driven-apps/"  class="external-link" target="_blank" rel="noopener">https://www.tibco.com/blog/2019/08/21/tibco-teams-up-with-asyncapi-to-advance-modern-event-driven-apps/</a></li>
+</ol>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Akash Mahapatra 
+    ·
+    
+
+    
+
+
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

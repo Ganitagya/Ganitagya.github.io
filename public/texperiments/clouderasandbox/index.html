@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Cloudera — Sandbox Deployment and Install Guide · akash_mahapatra
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Akash Mahapatra">
+<meta name="description" content="Cloudera — Sandbox Deployment and Install Guide">
+<meta name="keywords" content="blog, solutions architect, enterprise architect, data engineer, aws, azure, gcp, cloud, devops, devsecops, api, api management, data management, kafka">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cloudera — Sandbox Deployment and Install Guide">
+  <meta name="twitter:description" content="Cloudera — Sandbox Deployment and Install Guide">
+
+<meta property="og:url" content="http://localhost:1313/texperiments/clouderasandbox/">
+  <meta property="og:site_name" content="akash_mahapatra">
+  <meta property="og:title" content="Cloudera — Sandbox Deployment and Install Guide">
+  <meta property="og:description" content="Cloudera — Sandbox Deployment and Install Guide">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="texperiments">
+    <meta property="article:published_time" content="2019-08-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-08-23T00:00:00+00:00">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Cloudera">
+    <meta property="article:tag" content="Hortonworks Sandbox">
+    <meta property="article:tag" content="Bigdata">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/texperiments/clouderasandbox/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      akash_mahapatra
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/Solution-Architecture/">Solution-Architectures</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/TEXperiments/">TEXperiments</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/MahaTechBharat/">MahaTechBharat</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/texperiments/clouderasandbox/">
+          Cloudera — Sandbox Deployment and Install Guide
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="cloudera--sandbox-deployment-and-install-guide">
+  Cloudera — Sandbox Deployment and Install Guide
+  <a class="heading-link" href="#cloudera--sandbox-deployment-and-install-guide">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>Getting stuck is never fun. Especially when you’re working really hard on finishing up a project that has this “deadline” monster staring at you constantly through the skylight. I was caught up in a similar situation, on a Friday night, while working on a project involving integration with <a href="https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html"  class="external-link" target="_blank" rel="noopener">Hortonworks Data Platform on Hortonworks Sandbox</a>.</p>
+<p>I was using its Docker version on an AWS Instance and due to certain reasons, which I will mention in a while, the script provided by Hortonworks was incapable to bring the necessary containers up. So, in this post, I have made a note of the steps that I took in order to resolve the issue and make the setup work.</p>
+<p>You have to keep in mind that the setup has huge containers ( ~30GB ) and it needs to have at least 10GB of RAM to work properly. These are the <a href="https://www.cloudera.com/tutorials/sandbox-deployment-and-install-guide/3.html"  class="external-link" target="_blank" rel="noopener">prerequisites</a> as mentioned by the Sandbox Deployment and Install Guide. I was using AWS Image: Docker Infrastructure Ubuntu 14.04, which comes with Ubuntu Version: 1.10.2 preinstalled. So, depending upon your Docker version, you may or may not get the errors that have been listed below.</p>
+<p>The guide tells you to run the below command:</p>
+<pre tabindex="0"><code>sh docker-deploy-{HDPversion}.sh
+#In my case HDPVersion is 30 : docker-deploy-hdp30.sh
+</code></pre><p>Depending upon your version of Linux, you may have to either run it as <code>bash</code>.</p>
+<hr>
+<p>From this point onward, we may have different kinds of errors or no errors at all. I am putting the errors that I got and how I have resolved them.</p>
+<p>The first message which popped up was:</p>
+<pre tabindex="0"><code>+ docker run --privileged --name sandbox-hdp -h sandbox-hdp.hortonworks.com --network
+flag provided but not defined: --network
+See &#39;docker run --help&#39;.
+</code></pre><p>If you check docker documentation, it shows:</p>
+<pre tabindex="0"><code>$ docker run --help | grep net  
+  --net=default           Connect a container to a network
+  --net-alias=[]          Add network-scoped alias for the container
+</code></pre><p>Replace the flag from network to net in the script docker-deploy-hdp30.sh at line #40</p>
+<p><code>docker run --privileged --name $name -h $hostname --net=cda --net-alias=$hostname -d &quot;$registry/$name:$version&quot;</code></p>
+<p>The next error was:</p>
+<pre tabindex="0"><code>+ docker exec -t sandbox-hdp sh -c &#39;rm -rf /var/run/postgresql/*; systemctl restart p
+Error response from daemon: Container sandbox-hdp is not running
+</code></pre><p>This could be due to the previous error so let’s ignore it for the time being. Following this was:</p>
+<pre tabindex="0"><code>+ sandbox/proxy/proxy-deploy.sh
+sandbox-proxy
+flag provided but not defined: --network
+See &#39;docker run --help&#39;.
+</code></pre><p>Upon looking into the script docker-deploy-hdp30.sh, at the last line, there is a call to another script, i.e. sandbox/proxy/proxy-deploy.sh.
+Open the file sandbox/proxy/proxy-deploy.sh and replace the network flag with net as shown below. Remember to open this file as <code>sudo</code></p>
+<p><code>docker run --name sandbox-proxy --net=cda \</code></p>
+<p>Then run only the sandbox/proxy/proxy-deploy.sh script. Do not go back and run the docker-deploy-hdp30.sh file or else you will have to make the changes again, as it creates a new sandbox/proxy/proxy-deploy.sh file everytime. When I ran it, I got the error as :</p>
+<pre tabindex="0"><code>docker: Error response from daemon: 
+failed to create endpoint sandbox-proxy on network cda: Bind for 0.0.0.0:8000 failed: 
+port is already allocated.
+</code></pre><p>So, I changed the port from 8000 to 18000 and ran the script again and it solved my problem.</p>
+<hr>
+<p>Now the HDP setup is ready and you can play with it.</p>
+<pre tabindex="0"><code>$ docker ps | grep sandbox-hdp
+f55b44e38022   hortonworks/sandbox-hdp:3.0.1  &#34;/usr/sbin/init&#34;   14 minutes ago   Up 14 minutes      22/tcp, 4200/tcp, 8080/tcp    sandbox-hdp
+$docker exec -it f55b44e38022 bin/bash
+[root@sandbox-hdp /]# hive
+0: jdbc:hive2://sandbox-hdp.hortonworks.com:2&gt; show databases;
+</code></pre><p>Thank you,</p>
+<p>Cheers!!!</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Akash Mahapatra 
+    ·
+    
+
+    
+
+
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

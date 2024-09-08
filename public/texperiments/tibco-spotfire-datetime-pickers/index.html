@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  TIBCO Spotfire - Date and Time Pickers · akash_mahapatra
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Akash Mahapatra">
+<meta name="description" content="TIBCO Spotfire® provides is the ability to incorporate date-time pickers in the dashboards without the need for any libraries such as JQuery or complex date-picker functions.">
+<meta name="keywords" content="blog, solutions architect, enterprise architect, data engineer, aws, azure, gcp, cloud, devops, devsecops, api, api management, data management, kafka">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="TIBCO Spotfire - Date and Time Pickers">
+  <meta name="twitter:description" content="TIBCO Spotfire® provides is the ability to incorporate date-time pickers in the dashboards without the need for any libraries such as JQuery or complex date-picker functions.">
+
+<meta property="og:url" content="http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/">
+  <meta property="og:site_name" content="akash_mahapatra">
+  <meta property="og:title" content="TIBCO Spotfire - Date and Time Pickers">
+  <meta property="og:description" content="TIBCO Spotfire® provides is the ability to incorporate date-time pickers in the dashboards without the need for any libraries such as JQuery or complex date-picker functions.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="texperiments">
+    <meta property="article:published_time" content="2019-08-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-08-23T00:00:00+00:00">
+    <meta property="article:tag" content="Tibco">
+    <meta property="article:tag" content="Data-Visualization">
+    <meta property="article:tag" content="Data-Analytics">
+    <meta property="article:tag" content="Analytics">
+    <meta property="article:tag" content="Data Science">
+    <meta property="article:tag" content="Spotfire">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      akash_mahapatra
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/Solution-Architecture/">Solution-Architectures</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/TEXperiments/">TEXperiments</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/MahaTechBharat/">MahaTechBharat</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/">
+          TIBCO Spotfire - Date and Time Pickers
+        </a>
+      </h1>
+    </header>
+
+    <p><br>
+<br>
+<figure><img src="/images/sf-datetime/1.webp">
+</figure>
+</p>
+<p>TIBCO Spotfire® Software is the most complete analytics solution available in the market, empowering enterprises to investigate and envision new revelations in information through vivid dashboards and in-depth investigations.</p>
+<p>With TIBCO Spotfire® it becomes extremely easy to connect business data and design the relevant analysis solutions for enterprises, dramatically <strong><em>reducing the time to access vital data</em></strong> to identify areas to increase profits.</p>
+<p>TIBCO Spotfire® takes ease to the next level in order to help businesses and enterprises focus on the information rather than spending time to design proper analytics to get information from raw data. Its advanced AI-based system prompts users to get the relevant visualizations based on the underlying data and provides various tools to zoom into a specific region in the visualization to dig deeper into the data.</p>
+<p>In this effort for bringing ease of use to the table, another great feature that TIBCO Spotfire® provides is the ability to incorporate date-time pickers in the dashboards without the need for any libraries such as JQuery or complex date-picker functions. These inputs can be enhanced by converting them into HTML5 date pickers by adding the proper type attribute on the input HTML tag with some javascript.</p>
+<hr>
+<h2 id="using-date-and-time-pickers-in-tibco-spotfire">
+  Using Date and Time Pickers in TIBCO Spotfire®
+  <a class="heading-link" href="#using-date-and-time-pickers-in-tibco-spotfire">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>TIBCO Spotfire® provides a text area under the visualization types which can be edited as an HTML file. Below are the steps to achieve the results:</p>
+<ol>
+<li>Right Click on the Text Area and select “Edit HTML”</li>
+</ol>
+<figure><img src="/images/sf-datetime/2.webp" width="70%" height="auto">
+</figure>
+
+<ol start="2">
+<li>In the HTML text box that opens, copy and paste the below code snippet</li>
+</ol>
+<pre tabindex="0"><code>Date
+&lt;span id=&#34;date&#34;&gt;
+   &lt;SpotfireControl id=&#34;a7bc72fe047f456aa9ec859bc4029640&#34; /&gt;
+&lt;/span&gt;
+Time
+&lt;span id=&#34;time&#34;&gt;
+  &lt;SpotfireControl id=&#34;4a72bc5108ed483cb4715318bc61da3d&#34; /&gt;
+&lt;/span&gt;
+Datetime
+&lt;span id=&#34;datetime&#34;&gt;
+   &lt;SpotfireControl id=&#34;5c5b47d14865443dbcbf19ca8091d884&#34; /&gt;
+&lt;/span&gt;
+</code></pre><ol start="3">
+<li>To generate the specific SpotfireControl id, put your cursor on a new line below the span tag. Click on “Insert Property Control” and select “Input Field” to open the “Property Control” wizard.</li>
+</ol>
+<p><figure><img src="/images/sf-datetime/3.webp" width="60%" height="auto">
+</figure>
+
+<!-- raw HTML omitted --></p>
+<p><figure><img src="/images/sf-datetime/4.webp" width="60%" height="auto">
+</figure>
+
+<!-- raw HTML omitted --></p>
+<figure><img src="/images/sf-datetime/5.webp" width="60%" height="auto">
+</figure>
+
+<ol start="4">
+<li>Click on the New button to create a new property and provide necessary details such as data type and default values as required.</li>
+</ol>
+<figure><img src="/images/sf-datetime/6.webp" width="60%" height="auto">
+</figure>
+
+<ol start="5">
+<li>
+<p>Once the properties are configured, we will be able to see all the properties together on the text pad.
+<figure><img src="/images/sf-datetime/7.webp" width="60%" height="auto">
+</figure>
+</p>
+</li>
+<li>
+<p>Next, click on the “Insert JavaScript” option and click on the New button
+<figure><img src="/images/sf-datetime/8.webp" width="60%" height="auto">
+</figure>
+</p>
+</li>
+<li>
+<p>Use the below script in the new text pad that appears. Give the script a name and save it.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>[...document.querySelectorAll(&#34;.date input&#34;)].map(x =&gt; x.type=&#34;date&#34;);
+[...document.querySelectorAll(&#34;.time input&#34;)].map(x =&gt; x.type=&#34;time&#34;);
+[...document.querySelectorAll(&#34;.datetime input&#34;)].map(x =&gt; x.type=&#34;datetime-local&#34;);
+</code></pre><ol start="8">
+<li>
+<p>Finally the HTML code snippet along with the properties and Javascript should look like this:
+<figure><img src="/images/sf-datetime/9.webp" width="60%" height="auto">
+</figure>
+</p>
+</li>
+<li>
+<p>Save this HTML code snippet and the Date Time picker is ready.
+<figure><img src="/images/sf-datetime/10.webp" width="60%" height="auto">
+</figure>
+</p>
+</li>
+</ol>
+<p>It is now easier and almost out of the box to use different date pickers for date, time, or even date-time by using the power of HTML5. No jquery or other libraries needed</p>
+<hr>
+<h2 id="references">
+  References:
+  <a class="heading-link" href="#references">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li><a href="https://community.tibco.com/wiki/date-and-time-pickers"  class="external-link" target="_blank" rel="noopener">TIBCO Community: Date and Time Pickers</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types#date_and_time_pickers"  class="external-link" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types#date_and_time_pickers</a></li>
+</ol>
+<figure><img src="/images/sf-datetime/11.webp">
+</figure>
+
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Akash Mahapatra 
+    ·
+    
+
+    
+
+
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

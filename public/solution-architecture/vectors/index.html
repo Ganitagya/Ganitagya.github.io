@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Vectors · akash_mahapatra
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Akash Mahapatra">
+<meta name="description" content="Vectors">
+<meta name="keywords" content="blog, solutions architect, enterprise architect, data engineer, aws, azure, gcp, cloud, devops, devsecops, api, api management, data management, kafka">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vectors">
+  <meta name="twitter:description" content="Vectors">
+
+<meta property="og:url" content="http://localhost:1313/solution-architecture/vectors/">
+  <meta property="og:site_name" content="akash_mahapatra">
+  <meta property="og:title" content="Vectors">
+  <meta property="og:description" content="Vectors">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="solution-architecture">
+    <meta property="article:published_time" content="2019-08-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-08-23T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/solution-architecture/vectors/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      akash_mahapatra
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/Solution-Architecture/">Solution-Architectures</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/TEXperiments/">TEXperiments</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/MahaTechBharat/">MahaTechBharat</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/solution-architecture/vectors/">
+          Vectors
+        </a>
+      </h1>
+    </header>
+
+    <p>We, the humans are a highly complex demonstration of a perfectly designed algorithm. Our senses are the perfect instruments to realize that the nature around us is very colorful and diverse. There are a large number of events taking place around us. The winds, the climate, the technological advancements, the function of the human body and all the other varied phenomena occurring around us are somehow inter-depended. The great physicist Dr. R. P. Feynman has wonderfully described what “understanding something” is. Suppose we do not know the rules of chess and we are made to watch a game of chess being played and the moves of the players. If we watch the game for a long time, we may try to guess the rules. With the set of our guessed rules, we may try to conclude why a player played a particular move. We then will evaluate those rules ( that we think are the rules) as the game progresses and will start to discard some of them as we encounter contradictions.</p>
+<p>Machine Learning is also analogous to the above-mentioned description of what “understanding” is, here, in this case, the scenario can be of any phenomenon happening around us, like the tech giants launching their flagship products every year, a self-driving car finding its way through our busy streets, online video streaming media suggesting us our next movie or TV series, and the observer will be a machine (or a computer system).</p>
+<p>Many of us in our early days of under-graduation may have come across the universally accepted definition of an Algorithm: a process or set of rules to be followed in calculations or to solve a problem. Machine Learning is also about observations made by a computer of a real-world situation and its ability to describe that situation based on certain methods, so the next time something similar happens, the machine will have an explanation. If the description provided by the computer makes sense, it will be registered otherwise it will improvise. For instance, when provided with enough images of dogs and cats, a computer can differentiate between the two animals based on the observations of their unique features.</p>
+<p>The description of these phenomena becomes very easy if we have the freedom to use mathematics. Moreover, the techniques of mathematics such as algebra, calculus, statistics, etc. can be used to make predictions from the available data. Consequently, machine learning is all about forming an algorithm that can digest data to produce a prediction. A prediction can be “what is the object in a picture”, or “filtering emails as ‘spam’ or ‘not spam’”, or “what could be the price of the next flagship phone from Google”, or “what is a good combination of certain drugs to cure a certain disease”. Essentially, machine learning is built on mathematical models and our task is to ascertain why a certain model works or why a certain model is better than another.<br>
+There are four fundamental pillars of mathematics supporting the castle of Machine Learning:</p>
+<p>Statistics, Calculus, Probability, Linear Algebra</p>
+<p>Statistics is the core of any machine learning model. It helps in collecting information from the data relevant for the learning of the model. It is a tool to understand what the numbers are trying to say, in a way, it is a collection of tools that you can use to get answers to important questions about data. Data raises questions, such as:</p>
+<ul>
+<li>What does the data look like?</li>
+<li>What is the most common or expected observation?</li>
+<li>What are the boundaries of the data?</li>
+</ul>
+<p>Calculus tells how to make a model learn and optimize the model. Calculus helps to understand how data change over time, how to get the important information out of the data like maxima, minima, shape of the pattern of the data, and to operate on the data once the pattern is recognized. The language of calculus will allow you to speak precisely about the properties of data and better understand their behavior.</p>
+<p>Probability helps in predicting the likelihood of an event occurring. The most difficult thing in our universe is that nothing can be measured exactly. There will always be an uncertainty in anything our model predicts. While dealing with real-world situations our models will go through numerous random events which can distort the model very easily if our models are very rigid and not flexible enough to take into consideration the possibility of the unexpected. Our models should be tamed in a way to handle the uncertainty of the real-world problems. That is when probability theory comes to our aid.</p>
+<p>Linear algebra helps in running these models on massive datasets. It gives us a set of operations that can be performed on a group of numbers using the concepts of matrices. Linear Algebra is like your sibling who also happens to be a very good friend of your crush. It&rsquo;s a tool that introduces the data of the real world to a mathematical model.</p>
+<p>A large portion of machine learning is obtaining a way to properly represent some dataset programmatically to the computer so that it can be consumed by an algorithm.</p>
+<p>Any data in the real world can be represented as an ordered tuple in the Cartesian space with each data point being the Cartesian point. Take for example the dataset of the students of a particular school.</p>
+<table>
+<thead>
+<tr>
+<th>Sno</th>
+<th>Name</th>
+<th>Age</th>
+<th>Standard</th>
+<th>Height</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>xyz</td>
+<td>12</td>
+<td>7</td>
+<td>140</td>
+<td>29</td>
+</tr>
+<tr>
+<td>2</td>
+<td>abc</td>
+<td>12</td>
+<td>7</td>
+<td>140</td>
+<td>29</td>
+</tr>
+<tr>
+<td>3</td>
+<td>pqr</td>
+<td>12</td>
+<td>7</td>
+<td>140</td>
+<td>29</td>
+</tr>
+<tr>
+<td>4</td>
+<td>uvw</td>
+<td>12</td>
+<td>7</td>
+<td>140</td>
+<td>29</td>
+</tr>
+</tbody>
+</table>
+<p>The entire table shown above is a dataset and each row in the dataset is a data point. Each column in the dataset is called a feature.<br>
+Now, consider a 2-dimensional space in the Co-ordinate Geometry scenario. Generally, we call the two dimensions as the X-dimension ( X- direction) and the Y-dimension represented as the X axis and the Y axis.</p>
+<p>Any point in this coordinate system will have two components as we call them, the x-component and the y-component and hence, any generic point in this space can be represented as an ordered pair of the x-component and the y-component.<br>
+So, a point P = (x₁,y₁) will be a point which is x₁ distance away towards the right ( x₁ is positive) from the Y-axis and y₁ distance away from the X-axis.</p>
+<p>Now comes the fun part ( my teacher’s Catchphrase 😀 ), a vector has a magnitude and a direction, and the point P can be thought of a vector
+Let’s denote this vector with Ā.<br>
+The direction of Ā is from origin to the point (x,y)<br>
+Magnitude of Ā, which is generally denoted as ||Ā|| = length of the line-segment from origin to the (x,y) = sqrt(x²+y²)</p>
+<p>On the same lines, this concept can be extended to more than 2-dimensions as well.<br>
+Consider an n-dimensional Cartesian space. Any point in this space will have n components which we can call as x₁ component, x₂ component,….,x𝗇 component ( similar to x-component and y-component in a 2 dimensional space) and a generic point in this space P will be (x₁,x₂,….,x𝗇) and the corresponding vector will be in the direction from origin to P.<br>
+Ā = [x₁,x₂,….,x𝗇]<br>
+and its magnitude = sqrt(x₁² + x₂² + …. + x𝗇²)</p>
+<p>Any data-set in the real world also contains many features, as mentioned above in the student&rsquo;s dataset, each of which can be considered as a dimension in the real world.<br>
+Let’s consider another example, consider the dataset of measurements of various cars that were produced by a company. Each car on the list has three measurements (or features): length, width, and height. So a given car can be represented as a point in the 3-D space, each dimension corresponding to the individual feature. A car with a length of 4 meters, a height of 3 meters and a width of 3 meters can be represented as below.</p>
+<p>The same logic can be extended to a dataset with 300 features which can be represented in 300-Dimensional space. It is very difficult for us to visualize this immense space but machines can do it very easily. For a machine, a vector is a one-dimensional array with size equal to the number of features or dimensions.<br>
+For the above case of the car where a car was represented by 3 features, namely height, width, and length, a data point can be represented as<br>
+Ā = [x,y,z]</p>
+<p>In general, if any data point has n features, it can be represented as a vector by considering it as a (1 x n) array. One dimension for each feature. So for a 4-dimensional data point, we can use a 1x4 array to hold its 4 feature values.<br>
+Now consider a set of such data points all represented as 1xn arrays. A collection of all the data points becomes a matrix in the Linear Algebraic world.<br>
+A matrix is a rectangular array of numbers and a vector is a row or a column of a matrix. So each vector of a matrix could represent a different data point with each column being its respective features.</p>
+<p>The above-shown students dataset can be represented in a matrix as
+S = [<br>
+[ 1, xyz, 12, 7, 140, 29 ]<br>
+[ 2, abc, 12, 7, 140, 29 ]<br>
+[ 3, pqr, 12, 7, 140, 29 ]<br>
+[ 4, uvw, 12, 7, 140, 29 ]<br>
+]</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Column 0</th>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+<th>Column 4</th>
+<th>Column 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row 0</td>
+<td>1</td>
+<td>xyz</td>
+<td>12</td>
+<td>7</td>
+<td>140</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Row 1</td>
+<td>2</td>
+<td>abc</td>
+<td>12</td>
+<td>7</td>
+<td>140</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Row 2</td>
+<td>3</td>
+<td>pqr</td>
+<td>12</td>
+<td>7</td>
+<td>140</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Row 3</td>
+<td>4</td>
+<td>uvw</td>
+<td>12</td>
+<td>7</td>
+<td>140</td>
+<td>29</td>
+</tr>
+</tbody>
+</table>
+<p>Once we have represented the data in a suitable format to present to algorithms, the algorithm needs to operate on them. All vector operations can be performed on the data like vector addition, vector subtraction, vector projection, dot product. We generally don’t encounter cross product so we won’t be discussing that here.</p>
+<hr>
+<h3 id="addition-of-vectors">
+  Addition of vectors
+  <a class="heading-link" href="#addition-of-vectors">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Addition and subtraction of vectors is defined by the Triangle law.</p>
+<p>The triangle law is a useful tool if we have been provided the magnitude and direction of the vector, but there is another very easy way. Since we have all the components of the vector along all the dimensions, we can add them component wise to get the resultant vector.
+Consider two vectors A and B such that,<br>
+A = [a₁, a₂, …, a𝗇] B = [b₁, b₂, …, b𝗇]<br>
+Then,<br>
+A+B = [ a₁+b₁, a₂+b₂,…, a𝗇+b𝗇 ]</p>
+<p>Similarly, subtraction of vectors can be implemented as<br>
+A-B = [ a₁-b₁, a₂-b₂,…, a𝗇-b𝗇 ]</p>
+<h3 id="distance-between-two-points">
+  Distance between two points
+  <a class="heading-link" href="#distance-between-two-points">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Sometimes there are situations where we need to find out the similarity between two given data points. How similar the two given points are. One of the deciding metric to get similarity is the distance between the two points. More similar data points are generally closer as compared to less similar data points.</p>
+<p>Let’s consider the IRIS dataset.<br>
+As shown in the above picture, all the similar types of petal are closer to each other.</p>
+<p>The distance between two points can be calculated by the below formula:<br>
+||A-B|| = sqrt((a₁-b₁)² + (a₂-b₂)² + … + (a𝗇-b𝗇)²)</p>
+<h3 id="conventions-used">
+  Conventions used:
+  <a class="heading-link" href="#conventions-used">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Before discussing the remaining operations, I would like to discuss one of the conventions used here.<br>
+By default, any vector is a column vector.<br>
+Okay, what’s a column vector now, you ask?</p>
+<p>If it a (1 x n) vector then it is called a Row vector, now you guess what could be a column vector.</p>
+<h3 id="transpose-of-a-vector">
+  Transpose of a Vector
+  <a class="heading-link" href="#transpose-of-a-vector">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>It is an operation wherein the rows of the given matrix are made the columns of the resultant matrix. It is always easy to explain this operation pictorically. Transpose of a matrix A is denoted by Aᵀ</p>
+<p>Hence, the transpose of a row vector is a column vector and vice versa.\</p>
+<h3 id="dot-product">
+  Dot product
+  <a class="heading-link" href="#dot-product">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>It is one of the most extensively used operations on vectors in the field of machine learning. It has a wide range of applications, be it as simple as finding which side of a plane does a point belong to or as complex as dealing with various optimization operations on the models we design, dot product can be found standing vigilantly like the first slip beside the wicketkeeper ( yeah, many things can be learned from Cricket, tell your mother that the next time she asks you to shut the TV down during your exams. I don’t take the responsibility of the after effects though).</p>
+<p>Dot Product of two vectors A, B is denoted as A.B and is defined as:<br>
+A.B = abcosθ<br>
+where a = ||A|| = magnitude of the vector A<br>
+b = magnitude of the vector B<br>
+θ = angle between the two vectors A and B</p>
+<p>These were some of the basic operations that can be performed on vectors. In this blog post, my aim was to introduce you to the basic concepts of vectors as they are the basic building blocks of advanced concepts in Machine Learning. Once you understand how data is utilized in the computation world, then you can start computing and apply various other techniques to manipulate data and derive information out of them.<br>
+Like any other relationship, this relation also requires a bit of patience and perseverance. Yes, I have always loved mathematics and will continue to do so no matter what. My intention of writing this blog and many others which will follow in this series is to address the absolute beginners who are new to computer science and are exploring things around. In this series of posts, I will be covering the concepts that are used in the field of Machine Learning and will try to make it as easy to comprehend as possible.<br>
+Please comment below on which part did you like the most in this post and which part could have been done in a better way.</p>
+<p>Thanks for reading, Cheers !!!</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Akash Mahapatra 
+    ·
+    
+
+    
+
+
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

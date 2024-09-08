@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TEXperiments on akash_mahapatra</title>
+    <link>http://localhost:1313/texperiments/</link>
+    <description>Recent content in TEXperiments on akash_mahapatra</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/texperiments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloudera — Sandbox Deployment and Install Guide</title>
+      <link>http://localhost:1313/texperiments/clouderasandbox/</link>
+      <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/texperiments/clouderasandbox/</guid>
+      <description>Cloudera — Sandbox Deployment and Install Guide Link to heading Getting stuck is never fun. Especially when you’re working really hard on finishing up a project that has this “deadline” monster staring at you constantly through the skylight. I was caught up in a similar situation, on a Friday night, while working on a project involving integration with Hortonworks Data Platform on Hortonworks Sandbox.&#xA;I was using its Docker version on an AWS Instance and due to certain reasons, which I will mention in a while, the script provided by Hortonworks was incapable to bring the necessary containers up.</description>
+    </item>
+    <item>
+      <title>Setting up RDP in an Ubuntu-18 AWS EC2 Instance</title>
+      <link>http://localhost:1313/texperiments/rdp-ubuntu-aws/</link>
+      <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/texperiments/rdp-ubuntu-aws/</guid>
+      <description>I have come across situations many times when I have intentions to run some graphical sessions for some of my work. Many times having a GUI setup in your Linux servers can come in handy at times when you wish to show certain features or components of your development work to someone who is not that well accustomed to the CLI universe ( trust me this could be a lifesaver, “been there, done that”).</description>
+    </item>
+    <item>
+      <title>TIBCO Spotfire - Date and Time Pickers</title>
+      <link>http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/</link>
+      <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/</guid>
+      <description>TIBCO Spotfire® Software is the most complete analytics solution available in the market, empowering enterprises to investigate and envision new revelations in information through vivid dashboards and in-depth investigations.&#xA;With TIBCO Spotfire® it becomes extremely easy to connect business data and design the relevant analysis solutions for enterprises, dramatically reducing the time to access vital data to identify areas to increase profits.&#xA;TIBCO Spotfire® takes ease to the next level in order to help businesses and enterprises focus on the information rather than spending time to design proper analytics to get information from raw data.</description>
+    </item>
+  </channel>
+</rss>

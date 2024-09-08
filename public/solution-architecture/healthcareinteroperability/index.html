@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Embracing Healthcare Interoperability during Pandemic with TIBCO Cloud Integration · akash_mahapatra
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Akash Mahapatra">
+<meta name="description" content="A system to show how healthcare players (health insurers, CMS, etc.,) can meet the healthcare interoperability mandate by following the modern Integration patterns.">
+<meta name="keywords" content="blog, solutions architect, enterprise architect, data engineer, aws, azure, gcp, cloud, devops, devsecops, api, api management, data management, kafka">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Embracing Healthcare Interoperability during Pandemic with TIBCO Cloud Integration">
+  <meta name="twitter:description" content="A system to show how healthcare players (health insurers, CMS, etc.,) can meet the healthcare interoperability mandate by following the modern Integration patterns.">
+
+<meta property="og:url" content="http://localhost:1313/solution-architecture/healthcareinteroperability/">
+  <meta property="og:site_name" content="akash_mahapatra">
+  <meta property="og:title" content="Embracing Healthcare Interoperability during Pandemic with TIBCO Cloud Integration">
+  <meta property="og:description" content="A system to show how healthcare players (health insurers, CMS, etc.,) can meet the healthcare interoperability mandate by following the modern Integration patterns.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="solution-architecture">
+    <meta property="article:published_time" content="2019-08-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-08-23T00:00:00+00:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/solution-architecture/healthcareinteroperability/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      akash_mahapatra
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/Solution-Architecture/">Solution-Architectures</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/TEXperiments/">TEXperiments</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/MahaTechBharat/">MahaTechBharat</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/solution-architecture/healthcareinteroperability/">
+          Embracing Healthcare Interoperability during Pandemic with TIBCO Cloud Integration
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="embracing-healthcare-interoperability-during-pandemic-with-tibco-cloud-integration">
+  Embracing Healthcare Interoperability during Pandemic with TIBCO Cloud Integration
+  <a class="heading-link" href="#embracing-healthcare-interoperability-during-pandemic-with-tibco-cloud-integration">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>The World Health Organization (WHO) officially declared the SARS-CoV-2 outbreak a Public Health Emergency of International Concern on January 30, 2020, and a global pandemic on March 11, 2020. And since then, the way we live has changed immeasurably as the pandemic has brought to light the importance of technology, especially in data-sharing, analytics, and predictive modeling, leading to new communication means and skyrocketed need for computing resources. Remote work is the new normal. Most of us are at home, using tools like Zoom, Teams, and Slack to stay in touch with family, friends, and colleagues.</p>
+<p>Healthcare providers and hospitals are overwhelmed and struggling to render quality care. Limited access to patient health records is leading to a delay in timely intervention and administrative hassles. The current model of exchanging healthcare information involves physical mails and faxes. It is imperative to remove this bottleneck so that medical information can be exchanged seamlessly, enabling providers to make better clinical decisions and empower patients to access their medical information.</p>
+<hr>
+<p>On March 9, 2020, the Centers for Medicare &amp; Medicaid Services (CMS) announced the Final Rule for Interoperability and Patient Access. The intent of this Rule which affects all CMS-regulated health insurance plans, such as Medicare Advantage, Medicaid, Children Health Insurance Plan (CHIP), and Quality Health Plan (QHP) issuers on Federally-facilitated Exchanges (FFE), is to give patients full access and control of their health records electronically via mobile apps of the patients’ choice. The Rule mandates that these payers make two Application Program Interfaces (APIs) available by January 1, 2021 (plus a 6-month period where compliance will not be enforced) to third-party app developers so that these developers can create mobile apps which patients can choose to use.</p>
+<figure><img src="/images/healthcare/healthcare1.webp"
+    alt="The rule for Interoperability and Patient Access"><figcaption>
+      <p>The rule for Interoperability and Patient Access</p>
+    </figcaption>
+</figure>
+
+<p>These APIs (using Health Level 7® (HL7) Fast Healthcare Interoperability Resources® (FHIR) 4.0.1) include the following:</p>
+<ul>
+<li><strong>Patient Access API</strong> — which allows patients to easily access their claims and encounter information including costs and a defined subset of their clinical information.</li>
+<li><strong>Provider Directory API</strong> — which makes the plans’ provider directory information publicly available.</li>
+</ul>
+<p>This Rule doesn’t just require one to write an API or two, it is much more.
+There are a number of preparation steps that are needed in order to build these APIs:</p>
+<ul>
+<li>Managing data</li>
+<li>Process Orchestration</li>
+<li><a href="https://hl7.org/fhir/R4/"  class="external-link" target="_blank" rel="noopener">FHIR</a> (Fast Healthcare Interoperability Resources) Server &amp; Repository</li>
+<li>Managing APIs</li>
+</ul>
+<p>FHIR, a specification, based on modern RESTful approaches makes it easier for healthcare entities to exchange information that is specific, well defined, and ubiquitously understood.</p>
+<p>We at <strong>TIBCO’s Global Innovation Center</strong> recently built a system to show how payers (health insurers, CMS, etc.,) can meet the healthcare interoperability mandate by following the above steps.</p>
+<hr>
+<h3 id="system-architecture">
+  System Architecture
+  <a class="heading-link" href="#system-architecture">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<figure><img src="/images/healthcare/healthcare-arch.webp"
+    alt="Solution Architecture"><figcaption>
+      <p>Solution Architecture</p>
+    </figcaption>
+</figure>
+
+<p>The solution takes care of the following:</p>
+<ul>
+<li>Data Entitlement and Governance of Patient and Provider Datasets using Data Virtualization and Master Data Management — Unifies versions across all data sources &amp; types</li>
+<li>Reference Data Management for FHIR Terminologies — Clean, accurate &amp; secure data policies &amp; procedures</li>
+<li>Rapid transformation of clinical records to FHIR Resources, HL7 message to FHIR Resource, FHIR Resource to HL7 message for enabling Patient Access API and Provider Directory API</li>
+<li>Persisting FHIR resources in FHIR Server Repository</li>
+<li>API Management of Patient Access API and Provider Directory API — Create/host/manage APIs &amp; provide a developer portal</li>
+</ul>
+<hr>
+<h3 id="business-impact">
+  Business Impact
+  <a class="heading-link" href="#business-impact">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>TIBCO Cloud Integration (TCI) provides an Interoperability Platform that is complete healthcare IT solution to will help you build a solid foundation for robust, flexible, scalable, and FHIR compliant applications with:</p>
+<ul>
+<li>Ease of Integration — quick and secure integration with backend applications along with HL7 FHIR plug-in providing schemas and out of the box encoding, validation, and CDS functionalities, pre-built maps accelerate data format conversions.</li>
+<li>Reduced cost and time to market — tooling for rapid development and deployment of FHIR applications, accelerate developer and third party onboarding with an intuitive and self-service developer portal.</li>
+<li>Data Accessibility — provide Data-As-A-Service for complete, unified, and trusted view of healthcare business data, add business context to your data, complete data lifecycle management, PHI protection, and HIPAA compliance.</li>
+<li>Security —
+<ul>
+<li>ISO 27001:2013 Certificate for Information Security Management System</li>
+<li>Data Security: authentication, authorization, encryption, and masking, leverage your existing security investments (LDAP, Active Directory and Kerberos), standards (SAM, NTLM, TLS, and WSS), and policies for secure access</li>
+<li>API Security: API Key, API Key+Hash (MD5 or SHA1), OAuth2, and SAML for LDAP and AD integration</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>FHIR standard’s modular approach and emphasis on the latest web technologies have the potential to lower the barrier for achieving meaningful interoperability in healthcare. The widespread adoption of interoperability would promote care coordination, better health outcomes, and quality measures. Physicians can make data-driven interventions, improving care, reducing medical spending waste, and errors. Patients can make informed decisions about their healthcare needs. With the TIBCO Interoperability platform provided by TCI, businesses can accelerate their healthcare interoperability journey with the right tools and holistic approach.</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Akash Mahapatra 
+    ·
+    
+
+    
+
+
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

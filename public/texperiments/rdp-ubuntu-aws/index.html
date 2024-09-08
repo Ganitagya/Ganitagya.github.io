@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Setting up RDP in an Ubuntu-18 AWS EC2 Instance · akash_mahapatra
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Akash Mahapatra">
+<meta name="description" content="Remote Desktop Connection to Ubuntu server launched in AWS">
+<meta name="keywords" content="blog, solutions architect, enterprise architect, data engineer, aws, azure, gcp, cloud, devops, devsecops, api, api management, data management, kafka">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Setting up RDP in an Ubuntu-18 AWS EC2 Instance">
+  <meta name="twitter:description" content="Remote Desktop Connection to Ubuntu server launched in AWS">
+
+<meta property="og:url" content="http://localhost:1313/texperiments/rdp-ubuntu-aws/">
+  <meta property="og:site_name" content="akash_mahapatra">
+  <meta property="og:title" content="Setting up RDP in an Ubuntu-18 AWS EC2 Instance">
+  <meta property="og:description" content="Remote Desktop Connection to Ubuntu server launched in AWS">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="texperiments">
+    <meta property="article:published_time" content="2019-08-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-08-23T00:00:00+00:00">
+    <meta property="article:tag" content="Ubuntu">
+    <meta property="article:tag" content="Ubuntu-Server">
+    <meta property="article:tag" content="Aws">
+    <meta property="article:tag" content="Aws-Ec2">
+    <meta property="article:tag" content="Ec2">
+    <meta property="article:tag" content="Remote Working">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/texperiments/rdp-ubuntu-aws/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      akash_mahapatra
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/Solution-Architecture/">Solution-Architectures</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/TEXperiments/">TEXperiments</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/MahaTechBharat/">MahaTechBharat</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/texperiments/rdp-ubuntu-aws/">
+          Setting up RDP in an Ubuntu-18 AWS EC2 Instance
+        </a>
+      </h1>
+    </header>
+
+    <p>I have come across situations many times when I have intentions to run some graphical sessions for some of my work. Many times having a GUI setup in your Linux servers can come in handy at times when you wish to show certain features or components of your development work to someone who is not that well accustomed to the CLI universe ( trust me this could be a lifesaver, “been there, done that”). But at times it becomes a hectic task to install an RDP server on a remote machine.</p>
+<p>Here, in this article, I have listed the steps I generally take to set up an xRDP server on Ubuntu 18.04 hosted as an AWS EC2 instance.</p>
+<p>Please note that if you are using any of the later versions of Ubuntu such as Ubuntu 20 or something, this method may not work. Please follow the steps mentioned in the <a href="https://ubuntu.com/tutorials/ubuntu-desktop-aws#1-overview"  class="external-link" target="_blank" rel="noopener">official Ubuntu website</a></p>
+<hr>
+<h3 id="step-1-connecting-to-the-remote-server">
+  Step 1: Connecting to the remote server
+  <a class="heading-link" href="#step-1-connecting-to-the-remote-server">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>We need to login to the remote server via <code>ssh</code> in order to install various packages and prepare the environment. For this EC2 provides the command to connect to your instance. Just click on the “Connect” button towards to top right corner of the EC2 Service Page.</p>
+<figure><img src="/images/rdp/rdp1.webp">
+</figure>
+
+<h3 id="step-2-create-a-new-user">
+  Step 2: Create a new User
+  <a class="heading-link" href="#step-2-create-a-new-user">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>This step is important as even though AWS provides you with a user “ubuntu”, but EC2 doesn’t provide a password for this user which will be required while login. You may try to follow the below approach of changing the password of “ubuntu” user but I prefer to create a new user and do all of my development under that user.</p>
+<pre tabindex="0"><code># Change to the super user
+sudo su -
+# Provide a password for the &#34;ubuntu&#34; user
+passwd ubuntu
+</code></pre><p>To create a new user you can follow <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart"  class="external-link" target="_blank" rel="noopener">this article</a>.</p>
+<h3 id="step-3-the-actual-installation">
+  Step 3: The actual Installation
+  <a class="heading-link" href="#step-3-the-actual-installation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Once we are connected to our remote instance, we are now ready to setup the xRDP server</p>
+<pre tabindex="0"><code>sudo apt-get update
+sudo apt-get install xrdp
+</code></pre><p>Installing a desktop environment : XFCE in our case as xRDP has problems working with Unity and GNOME desktop environment.</p>
+<pre tabindex="0"><code>sudo apt-get install xfce4
+sudo apt-get install xfce4-terminal
+</code></pre><p>Make xRDP to use the environment we just create</p>
+<pre tabindex="0"><code>sudo sed -i.bak &#39;/fi/a #xrdp multiple users configuration \n xfce-session \n&#39; /etc/xrdp/startwm.sh
+</code></pre><p>Provide the Firewall permissions, allowing RDP (running at port 3389) to go through the local firewall.</p>
+<pre tabindex="0"><code>sudo ufw allow 3389/tcp
+# Restart xRDP
+sudo /etc/init.d/xrdp restart
+</code></pre><h3 id="step-4-done">
+  Step 4: Done
+  <a class="heading-link" href="#step-4-done">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The setting up is done and now you should be able to connect from your local laptops.</p>
+<ul>
+<li>If you are running a Windows machine, use the inbuilt RDP connection application.</li>
+<li>Mac users can use the <a href="https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12"  class="external-link" target="_blank" rel="noopener">Microsoft Remote Desktop</a></li>
+<li><a href="https://remmina.org/how-to-install-remmina/"  class="external-link" target="_blank" rel="noopener">Remmina</a> can be used with any other platform.</li>
+</ul>
+<figure><img src="/images/rdp/rdp2.webp">
+</figure>
+
+<p>Provide the username and password created in step 2.</p>
+<hr>
+<h3 id="references">
+  References:
+  <a class="heading-link" href="#references">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li><a href="http://c-nergy.be/blog/?p=8952"  class="external-link" target="_blank" rel="noopener">http://c-nergy.be/blog/?p=8952</a></li>
+</ol>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Akash Mahapatra 
+    ·
+    
+
+    
+
+
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

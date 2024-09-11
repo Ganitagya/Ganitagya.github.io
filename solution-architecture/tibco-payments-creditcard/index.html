@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform · akash_mahapatra
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Akash Mahapatra">
+<meta name="description" content="Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform">
+<meta name="keywords" content="blog, solutions architect, enterprise architect, data engineer, aws, azure, gcp, cloud, devops, devsecops, api, api management, data management, kafka">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform">
+  <meta name="twitter:description" content="Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform">
+
+<meta property="og:url" content="https://ganitagya.github.io/solution-architecture/tibco-payments-creditcard/">
+  <meta property="og:site_name" content="akash_mahapatra">
+  <meta property="og:title" content="Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform">
+  <meta property="og:description" content="Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="solution-architecture">
+    <meta property="article:published_time" content="2021-05-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-05-25T00:00:00+00:00">
+    <meta property="article:tag" content="API">
+    <meta property="article:tag" content="API Security">
+    <meta property="article:tag" content="Payments">
+    <meta property="article:tag" content="Credit-Cards">
+    <meta property="article:tag" content="Event-Driven">
+    <meta property="article:tag" content="Predictive-Analysis">
+
+
+
+
+<link rel="canonical" href="https://ganitagya.github.io/solution-architecture/tibco-payments-creditcard/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://ganitagya.github.io/">
+      akash_mahapatra
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/solution-architecture/">Solution-Architectures</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/texperiments/">TEXperiments</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/mahatechbharat/">MahaTechBharat</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://ganitagya.github.io/solution-architecture/tibco-payments-creditcard/">
+          Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform
+        </a>
+      </h1>
+    </header>
+
+    <p>With the advancements in the means of distributing data among disparate systems, it becomes crucial to conform to evolving methods of ingesting data. Considering an event-driven approach, emphasis rests on the speed of execution, contextual processing to correlate current and historical events and make decisions based on business rules for pattern recognition and recommendation systems. And on top, there emerges a demand for data analytics rendering visibility to the data as it flows through the architecture.</p>
+<h2 id="system-architecture">
+  System Architecture
+  <a class="heading-link" href="#system-architecture">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>TIBCO platform provides all of these capabilities in a modular way empowering enterprises to deploy the entire stack or plug individual functions into an existing ecosystem.</p>
+<figure><img src="/images/payments-tibco/1.webp"
+    alt="How Tibco can help achieve event driven decision making in the payments industry"><figcaption>
+      <p>TIBCO Connected Intelligence Platform</p>
+    </figcaption>
+</figure>
+
+<p>TIBCO presents the buffet to be orchestrated as per the customer’s necessities.</p>
+<ol>
+<li>Data collection — TIBCO Integration Platform offers hundreds of connectors to applications across platforms (omnichannel experience for the customers whether using mobile apps, web apps, IoT sensors, or any other media), data formats, and protocols to accumulate data from events as and when they occur.</li>
+<li>Data Distribution — TIBCO Messaging includes enterprise support for Apache Kafka, Apache Pulsar, and MQTT as well as our own EMS, FTL, and eFTL capabilities to move data across systems for consumption and carrying out specific tasks enhancing customer experience.</li>
+<li>Contextual Event Processing — TIBCO BusinessEvents allows rules to take action on events based on the context of related events in the past to roll out personalized offers to customers.</li>
+<li>Stream Event Processing — TIBCO Streaming provides automated decisions and actions on event streams in real-time</li>
+<li>Analytics — TIBCO Spotfire and TIBCO Data Science provide visualization of event streams as well as predictive insights into event patterns.</li>
+</ol>
+<h2 id="sample-demo-scenario">
+  Sample Demo Scenario
+  <a class="heading-link" href="#sample-demo-scenario">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Consider the scenario of a customer raising a request application for getting a new credit card and on receiving the card, carrying out transactions. TIBCO Integration Platform along with its analytics capabilities can take care of the entire process starting with developing without any heavy-duty coding with simple drag and drop graphical UI followed by deployment to any platform of choice, be it on-prem, public, or private cloud.</p>
+<ol>
+<li>
+<p>Application Credit Decision<br>
+a. Applicant visits the credit card issuers website to fill in the information.<br>
+b. API Call made to TIBCO Integration Platform with the relevant data.<br>
+c. Scoring the application based on business rules and decision tables.<br>
+d. Respond to the API Call with calculated information and the decision to approve, decline, etc.</p>
+</li>
+<li>
+<p>Multiple Process Flow Management<br>
+a. Customer uses the card real-time or customer’s account cycles (batch/cycle-based).<br>
+b. API call made to TIBCO Integration or a Batch process is initiated.<br>
+      i. Connected to multiple data sources to obtain relevant information.<br>
+      ii. Scoring the batch/individual calls based on past spendings patterns.<br>
+      iii. Using the Scores, new credit limits, extra limits, etc. calculated.<br>
+      iv. Carry out decision table actions.<br>
+c. Respond with feedback to API or update tables in batches.</p>
+</li>
+<li>
+<p>Next Best Offer<br>
+a. Customer uses the card.<br>
+b. Based on the spending patterns and other data from varied sources, the next best offer that can be given to the customer.<br>
+c. Respond to API or populate the table with relevant information.</p>
+</li>
+</ol>
+<h2 id="technology-stack">
+  Technology Stack
+  <a class="heading-link" href="#technology-stack">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li>TIBCO Businessworks Container Edition</li>
+<li>TIBCO BusinessEvents Enterprise Edition</li>
+<li>TIBCO Cloud Integration (Flogo)</li>
+<li>TIBCO LiveApps</li>
+<li>TIBCO Spotfire</li>
+</ol>
+<h2 id="business-benefits">
+  Business Benefits
+  <a class="heading-link" href="#business-benefits">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li>An Omnichannel experience for the customers regardless of the platform they use and where they left. Customers will be greeted with where they left and have an enhanced user experience.</li>
+<li>Better utilization of the data without moving it out of the eco-system (privacy focussed) for specialized and personalized offers to the customers and in turn improving the customer experience.</li>
+<li>Enabling immediate response fraud detection and alarming system using high-performing decision tables, business rules, and AI/ML capabilities.</li>
+</ol>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Akash Mahapatra 
+    ·
+    
+
+    
+
+
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

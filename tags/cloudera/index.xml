@@ -6,12 +6,12 @@
     <description>Recent content in Cloudera on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ganitagya.github.io/tags/cloudera/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloudera — Sandbox Deployment and Install Guide</title>
       <link>https://ganitagya.github.io/texperiments/clouderasandbox/</link>
-      <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
       <guid>https://ganitagya.github.io/texperiments/clouderasandbox/</guid>
       <description>Cloudera — Sandbox Deployment and Install Guide Link to heading Getting stuck is never fun. Especially when you’re working really hard on finishing up a project that has this “deadline” monster staring at you constantly through the skylight. I was caught up in a similar situation, on a Friday night, while working on a project involving integration with Hortonworks Data Platform on Hortonworks Sandbox.&#xA;I was using its Docker version on an AWS Instance and due to certain reasons, which I will mention in a while, the script provided by Hortonworks was incapable to bring the necessary containers up.</description>
     </item>

@@ -6,11 +6,12 @@
     <description>Recent content in Enterprise Integration on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ganitagya.github.io/tags/enterprise-integration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modern Event-Driven Application Development using TIBCO and AsyncAPI</title>
       <link>https://ganitagya.github.io/solution-architecture/bw-asyncapi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
       <guid>https://ganitagya.github.io/solution-architecture/bw-asyncapi/</guid>
       <description>We have all heard about the term “API First Design” and “Cloud-Native Applications” (they generally walk hand in hand). APIs are omnipresent and sometimes we get caught up so much with them as the way of impelling data around and other technical aspects involved with the data formats, various protocols to be used, etc. that we forget they are truly about solving customer problems, enhancing developer experience, and integrating solutions.</description>
     </item>

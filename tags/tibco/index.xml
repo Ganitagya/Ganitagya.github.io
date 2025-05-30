@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tibco on akash_mahapatra</title>
-    <link>https://ganitagya.github.io/tags/tibco/</link>
+    <link>http://localhost:1313/tags/tibco/</link>
     <description>Recent content in Tibco on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ganitagya.github.io/tags/tibco/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/tibco/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TIBCO Spotfire - Date and Time Pickers</title>
-      <link>https://ganitagya.github.io/texperiments/tibco-spotfire-datetime-pickers/</link>
+      <link>http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/texperiments/tibco-spotfire-datetime-pickers/</guid>
+      <guid>http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/</guid>
       <description>TIBCO Spotfire® Software is the most complete analytics solution available in the market, empowering enterprises to investigate and envision new revelations in information through vivid dashboards and in-depth investigations.&#xA;With TIBCO Spotfire® it becomes extremely easy to connect business data and design the relevant analysis solutions for enterprises, dramatically reducing the time to access vital data to identify areas to increase profits.&#xA;TIBCO Spotfire® takes ease to the next level in order to help businesses and enterprises focus on the information rather than spending time to design proper analytics to get information from raw data.</description>
     </item>
     <item>
       <title>Modern Event-Driven Application Development using TIBCO and AsyncAPI</title>
-      <link>https://ganitagya.github.io/solution-architecture/bw-asyncapi/</link>
+      <link>http://localhost:1313/solution-architecture/bw-asyncapi/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/solution-architecture/bw-asyncapi/</guid>
+      <guid>http://localhost:1313/solution-architecture/bw-asyncapi/</guid>
       <description>We have all heard about the term “API First Design” and “Cloud-Native Applications” (they generally walk hand in hand). APIs are omnipresent and sometimes we get caught up so much with them as the way of impelling data around and other technical aspects involved with the data formats, various protocols to be used, etc. that we forget they are truly about solving customer problems, enhancing developer experience, and integrating solutions.</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spotfire on akash_mahapatra</title>
-    <link>https://ganitagya.github.io/tags/spotfire/</link>
+    <link>http://localhost:1313/tags/spotfire/</link>
     <description>Recent content in Spotfire on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ganitagya.github.io/tags/spotfire/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/spotfire/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TIBCO Spotfire - Date and Time Pickers</title>
-      <link>https://ganitagya.github.io/texperiments/tibco-spotfire-datetime-pickers/</link>
+      <link>http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/texperiments/tibco-spotfire-datetime-pickers/</guid>
+      <guid>http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/</guid>
       <description>TIBCO Spotfire® Software is the most complete analytics solution available in the market, empowering enterprises to investigate and envision new revelations in information through vivid dashboards and in-depth investigations.&#xA;With TIBCO Spotfire® it becomes extremely easy to connect business data and design the relevant analysis solutions for enterprises, dramatically reducing the time to access vital data to identify areas to increase profits.&#xA;TIBCO Spotfire® takes ease to the next level in order to help businesses and enterprises focus on the information rather than spending time to design proper analytics to get information from raw data.</description>
     </item>
   </channel>

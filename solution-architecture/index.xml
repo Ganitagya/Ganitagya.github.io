@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Solution-Architectures on akash_mahapatra</title>
-    <link>https://ganitagya.github.io/solution-architecture/</link>
+    <link>http://localhost:1313/solution-architecture/</link>
     <description>Recent content in Solution-Architectures on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ganitagya.github.io/solution-architecture/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/solution-architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform</title>
-      <link>https://ganitagya.github.io/solution-architecture/tibco-payments-creditcard/</link>
+      <link>http://localhost:1313/solution-architecture/tibco-payments-creditcard/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/solution-architecture/tibco-payments-creditcard/</guid>
+      <guid>http://localhost:1313/solution-architecture/tibco-payments-creditcard/</guid>
       <description>With the advancements in the means of distributing data among disparate systems, it becomes crucial to conform to evolving methods of ingesting data. Considering an event-driven approach, emphasis rests on the speed of execution, contextual processing to correlate current and historical events and make decisions based on business rules for pattern recognition and recommendation systems. And on top, there emerges a demand for data analytics rendering visibility to the data as it flows through the architecture.</description>
     </item>
     <item>
       <title>Embracing Healthcare Interoperability during Pandemic with TIBCO Cloud Integration</title>
-      <link>https://ganitagya.github.io/solution-architecture/healthcareinteroperability/</link>
+      <link>http://localhost:1313/solution-architecture/healthcareinteroperability/</link>
       <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/solution-architecture/healthcareinteroperability/</guid>
+      <guid>http://localhost:1313/solution-architecture/healthcareinteroperability/</guid>
       <description>Embracing Healthcare Interoperability during Pandemic with TIBCO Cloud Integration Link to heading The World Health Organization (WHO) officially declared the SARS-CoV-2 outbreak a Public Health Emergency of International Concern on January 30, 2020, and a global pandemic on March 11, 2020. And since then, the way we live has changed immeasurably as the pandemic has brought to light the importance of technology, especially in data-sharing, analytics, and predictive modeling, leading to new communication means and skyrocketed need for computing resources.</description>
     </item>
     <item>
       <title>Modern Event-Driven Application Development using TIBCO and AsyncAPI</title>
-      <link>https://ganitagya.github.io/solution-architecture/bw-asyncapi/</link>
+      <link>http://localhost:1313/solution-architecture/bw-asyncapi/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/solution-architecture/bw-asyncapi/</guid>
+      <guid>http://localhost:1313/solution-architecture/bw-asyncapi/</guid>
       <description>We have all heard about the term “API First Design” and “Cloud-Native Applications” (they generally walk hand in hand). APIs are omnipresent and sometimes we get caught up so much with them as the way of impelling data around and other technical aspects involved with the data formats, various protocols to be used, etc. that we forget they are truly about solving customer problems, enhancing developer experience, and integrating solutions.</description>
     </item>
     <item>
       <title>Vectors</title>
-      <link>https://ganitagya.github.io/solution-architecture/vectors/</link>
+      <link>http://localhost:1313/solution-architecture/vectors/</link>
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/solution-architecture/vectors/</guid>
+      <guid>http://localhost:1313/solution-architecture/vectors/</guid>
       <description>We, the humans are a highly complex demonstration of a perfectly designed algorithm. Our senses are the perfect instruments to realize that the nature around us is very colorful and diverse. There are a large number of events taking place around us. The winds, the climate, the technological advancements, the function of the human body and all the other varied phenomena occurring around us are somehow inter-depended. The great physicist Dr.</description>
     </item>
   </channel>

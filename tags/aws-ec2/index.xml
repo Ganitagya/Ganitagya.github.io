@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aws-Ec2 on akash_mahapatra</title>
-    <link>https://ganitagya.github.io/tags/aws-ec2/</link>
+    <link>http://localhost:1313/tags/aws-ec2/</link>
     <description>Recent content in Aws-Ec2 on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sat, 11 Apr 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ganitagya.github.io/tags/aws-ec2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/aws-ec2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setting up RDP in an Ubuntu-18 AWS EC2 Instance</title>
-      <link>https://ganitagya.github.io/texperiments/rdp-ubuntu-aws/</link>
+      <link>http://localhost:1313/texperiments/rdp-ubuntu-aws/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/texperiments/rdp-ubuntu-aws/</guid>
+      <guid>http://localhost:1313/texperiments/rdp-ubuntu-aws/</guid>
       <description>I have come across situations many times when I have intentions to run some graphical sessions for some of my work. Many times having a GUI setup in your Linux servers can come in handy at times when you wish to show certain features or components of your development work to someone who is not that well accustomed to the CLI universe ( trust me this could be a lifesaver, “been there, done that”).</description>
     </item>
   </channel>

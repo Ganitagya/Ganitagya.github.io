@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>akash_mahapatra</title>
-    <link>https://ganitagya.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 26 Aug 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://ganitagya.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Draupadi’s Swayamvar: A Tale of Power, Skill, and Destiny</title>
-      <link>https://ganitagya.github.io/mahatechbharat/draupadis_swayamvar/</link>
+      <link>http://localhost:1313/mahatechbharat/draupadis_swayamvar/</link>
       <pubDate>Mon, 26 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/mahatechbharat/draupadis_swayamvar/</guid>
+      <guid>http://localhost:1313/mahatechbharat/draupadis_swayamvar/</guid>
       <description>Draupadi: A Princess Beyond Compare Link to heading Draupadi, the princess of Panchala, was a woman of extraordinary brilliance and beauty. Renowned for her exceptional skills in history, geography, art, and warfare, she was a force to be reckoned with. King Drupad, her father, faced a daunting task: finding a suitable husband for a woman who surpassed most men in intellect and ability.&#xA;Arjuna, the Third Pandava Link to heading Arjuna, the third son of Kunti, was renowned as one of the greatest warriors of his time.</description>
     </item>
     <item>
       <title>TIBCO Spotfire - Date and Time Pickers</title>
-      <link>https://ganitagya.github.io/texperiments/tibco-spotfire-datetime-pickers/</link>
+      <link>http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/texperiments/tibco-spotfire-datetime-pickers/</guid>
+      <guid>http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/</guid>
       <description>TIBCO Spotfire® Software is the most complete analytics solution available in the market, empowering enterprises to investigate and envision new revelations in information through vivid dashboards and in-depth investigations.&#xA;With TIBCO Spotfire® it becomes extremely easy to connect business data and design the relevant analysis solutions for enterprises, dramatically reducing the time to access vital data to identify areas to increase profits.&#xA;TIBCO Spotfire® takes ease to the next level in order to help businesses and enterprises focus on the information rather than spending time to design proper analytics to get information from raw data.</description>
     </item>
     <item>
       <title>Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform</title>
-      <link>https://ganitagya.github.io/solution-architecture/tibco-payments-creditcard/</link>
+      <link>http://localhost:1313/solution-architecture/tibco-payments-creditcard/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/solution-architecture/tibco-payments-creditcard/</guid>
+      <guid>http://localhost:1313/solution-architecture/tibco-payments-creditcard/</guid>
       <description>With the advancements in the means of distributing data among disparate systems, it becomes crucial to conform to evolving methods of ingesting data. Considering an event-driven approach, emphasis rests on the speed of execution, contextual processing to correlate current and historical events and make decisions based on business rules for pattern recognition and recommendation systems. And on top, there emerges a demand for data analytics rendering visibility to the data as it flows through the architecture.</description>
     </item>
     <item>
       <title>Embracing Healthcare Interoperability during Pandemic with TIBCO Cloud Integration</title>
-      <link>https://ganitagya.github.io/solution-architecture/healthcareinteroperability/</link>
+      <link>http://localhost:1313/solution-architecture/healthcareinteroperability/</link>
       <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/solution-architecture/healthcareinteroperability/</guid>
+      <guid>http://localhost:1313/solution-architecture/healthcareinteroperability/</guid>
       <description>Embracing Healthcare Interoperability during Pandemic with TIBCO Cloud Integration Link to heading The World Health Organization (WHO) officially declared the SARS-CoV-2 outbreak a Public Health Emergency of International Concern on January 30, 2020, and a global pandemic on March 11, 2020. And since then, the way we live has changed immeasurably as the pandemic has brought to light the importance of technology, especially in data-sharing, analytics, and predictive modeling, leading to new communication means and skyrocketed need for computing resources.</description>
     </item>
     <item>
       <title>Setting up RDP in an Ubuntu-18 AWS EC2 Instance</title>
-      <link>https://ganitagya.github.io/texperiments/rdp-ubuntu-aws/</link>
+      <link>http://localhost:1313/texperiments/rdp-ubuntu-aws/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/texperiments/rdp-ubuntu-aws/</guid>
+      <guid>http://localhost:1313/texperiments/rdp-ubuntu-aws/</guid>
       <description>I have come across situations many times when I have intentions to run some graphical sessions for some of my work. Many times having a GUI setup in your Linux servers can come in handy at times when you wish to show certain features or components of your development work to someone who is not that well accustomed to the CLI universe ( trust me this could be a lifesaver, “been there, done that”).</description>
     </item>
     <item>
       <title>Modern Event-Driven Application Development using TIBCO and AsyncAPI</title>
-      <link>https://ganitagya.github.io/solution-architecture/bw-asyncapi/</link>
+      <link>http://localhost:1313/solution-architecture/bw-asyncapi/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/solution-architecture/bw-asyncapi/</guid>
+      <guid>http://localhost:1313/solution-architecture/bw-asyncapi/</guid>
       <description>We have all heard about the term “API First Design” and “Cloud-Native Applications” (they generally walk hand in hand). APIs are omnipresent and sometimes we get caught up so much with them as the way of impelling data around and other technical aspects involved with the data formats, various protocols to be used, etc. that we forget they are truly about solving customer problems, enhancing developer experience, and integrating solutions.</description>
     </item>
     <item>
       <title>Cloudera — Sandbox Deployment and Install Guide</title>
-      <link>https://ganitagya.github.io/texperiments/clouderasandbox/</link>
+      <link>http://localhost:1313/texperiments/clouderasandbox/</link>
       <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/texperiments/clouderasandbox/</guid>
+      <guid>http://localhost:1313/texperiments/clouderasandbox/</guid>
       <description>Cloudera — Sandbox Deployment and Install Guide Link to heading Getting stuck is never fun. Especially when you’re working really hard on finishing up a project that has this “deadline” monster staring at you constantly through the skylight. I was caught up in a similar situation, on a Friday night, while working on a project involving integration with Hortonworks Data Platform on Hortonworks Sandbox.&#xA;I was using its Docker version on an AWS Instance and due to certain reasons, which I will mention in a while, the script provided by Hortonworks was incapable to bring the necessary containers up.</description>
     </item>
     <item>
       <title>Enterprise OAuth With Draupadi&#39;s Swayamvar</title>
-      <link>https://ganitagya.github.io/mahatechbharat/oauth/</link>
+      <link>http://localhost:1313/mahatechbharat/oauth/</link>
       <pubDate>Fri, 23 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/mahatechbharat/oauth/</guid>
+      <guid>http://localhost:1313/mahatechbharat/oauth/</guid>
       <description>Darupadi&amp;rsquo;s Swayamvar - Enterprise OAuth Link to heading Coming Soon &amp;hellip;</description>
     </item>
     <item>
       <title>Vectors</title>
-      <link>https://ganitagya.github.io/solution-architecture/vectors/</link>
+      <link>http://localhost:1313/solution-architecture/vectors/</link>
       <pubDate>Sat, 15 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://ganitagya.github.io/solution-architecture/vectors/</guid>
+      <guid>http://localhost:1313/solution-architecture/vectors/</guid>
       <description>We, the humans are a highly complex demonstration of a perfectly designed algorithm. Our senses are the perfect instruments to realize that the nature around us is very colorful and diverse. There are a large number of events taking place around us. The winds, the climate, the technological advancements, the function of the human body and all the other varied phenomena occurring around us are somehow inter-depended. The great physicist Dr.</description>
     </item>
   </channel>

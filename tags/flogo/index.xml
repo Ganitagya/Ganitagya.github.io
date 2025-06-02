@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Flogo on akash_mahapatra</title>
-    <link>http://localhost:1313/tags/flogo/</link>
+    <link>http://10.10.10.82:1313/tags/flogo/</link>
     <description>Recent content in Flogo on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Sun, 02 Feb 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/flogo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://10.10.10.82:1313/tags/flogo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Modern Event-Driven Application Development using TIBCO and AsyncAPI</title>
-      <link>http://localhost:1313/solution-architecture/bw-asyncapi/</link>
+      <link>http://10.10.10.82:1313/solution-architecture/bw-asyncapi/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/solution-architecture/bw-asyncapi/</guid>
+      <guid>http://10.10.10.82:1313/solution-architecture/bw-asyncapi/</guid>
       <description>We have all heard about the term “API First Design” and “Cloud-Native Applications” (they generally walk hand in hand). APIs are omnipresent and sometimes we get caught up so much with them as the way of impelling data around and other technical aspects involved with the data formats, various protocols to be used, etc. that we forget they are truly about solving customer problems, enhancing developer experience, and integrating solutions.</description>
     </item>
   </channel>

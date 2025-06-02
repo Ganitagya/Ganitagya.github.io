@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>API on akash_mahapatra</title>
-    <link>http://localhost:1313/tags/api/</link>
+    <link>http://10.10.10.82:1313/tags/api/</link>
     <description>Recent content in API on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://10.10.10.82:1313/tags/api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Event-Driven Payment Processing and Management For Credit Cards Using TIBCO Integration Platform</title>
-      <link>http://localhost:1313/solution-architecture/tibco-payments-creditcard/</link>
+      <link>http://10.10.10.82:1313/solution-architecture/tibco-payments-creditcard/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/solution-architecture/tibco-payments-creditcard/</guid>
+      <guid>http://10.10.10.82:1313/solution-architecture/tibco-payments-creditcard/</guid>
       <description>With the advancements in the means of distributing data among disparate systems, it becomes crucial to conform to evolving methods of ingesting data. Considering an event-driven approach, emphasis rests on the speed of execution, contextual processing to correlate current and historical events and make decisions based on business rules for pattern recognition and recommendation systems. And on top, there emerges a demand for data analytics rendering visibility to the data as it flows through the architecture.</description>
     </item>
   </channel>

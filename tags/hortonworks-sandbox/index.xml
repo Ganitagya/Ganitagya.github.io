@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hortonworks Sandbox on akash_mahapatra</title>
-    <link>http://localhost:1313/tags/hortonworks-sandbox/</link>
+    <link>http://10.10.10.82:1313/tags/hortonworks-sandbox/</link>
     <description>Recent content in Hortonworks Sandbox on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 03 Dec 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hortonworks-sandbox/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://10.10.10.82:1313/tags/hortonworks-sandbox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloudera — Sandbox Deployment and Install Guide</title>
-      <link>http://localhost:1313/texperiments/clouderasandbox/</link>
+      <link>http://10.10.10.82:1313/texperiments/clouderasandbox/</link>
       <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/texperiments/clouderasandbox/</guid>
+      <guid>http://10.10.10.82:1313/texperiments/clouderasandbox/</guid>
       <description>Cloudera — Sandbox Deployment and Install Guide Link to heading Getting stuck is never fun. Especially when you’re working really hard on finishing up a project that has this “deadline” monster staring at you constantly through the skylight. I was caught up in a similar situation, on a Friday night, while working on a project involving integration with Hortonworks Data Platform on Hortonworks Sandbox.&#xA;I was using its Docker version on an AWS Instance and due to certain reasons, which I will mention in a while, the script provided by Hortonworks was incapable to bring the necessary containers up.</description>
     </item>
   </channel>

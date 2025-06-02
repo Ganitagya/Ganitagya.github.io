@@ -2,135 +2,135 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://10.10.10.82:1313/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mahatechbharat/draupadis_swayamvar/</loc>
+    <loc>http://10.10.10.82:1313/mahatechbharat/draupadis_swayamvar/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mahatechbharat/</loc>
+    <loc>http://10.10.10.82:1313/mahatechbharat/</loc>
     <lastmod>2024-08-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/games/</loc>
+    <loc>http://10.10.10.82:1313/games/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/analytics/</loc>
+    <loc>http://10.10.10.82:1313/tags/analytics/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/data-science/</loc>
+    <loc>http://10.10.10.82:1313/tags/data-science/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/data-analytics/</loc>
+    <loc>http://10.10.10.82:1313/tags/data-analytics/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/data-visualization/</loc>
+    <loc>http://10.10.10.82:1313/tags/data-visualization/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/spotfire/</loc>
+    <loc>http://10.10.10.82:1313/tags/spotfire/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://10.10.10.82:1313/tags/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/texperiments/</loc>
+    <loc>http://10.10.10.82:1313/texperiments/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tibco/</loc>
+    <loc>http://10.10.10.82:1313/tags/tibco/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/texperiments/tibco-spotfire-datetime-pickers/</loc>
+    <loc>http://10.10.10.82:1313/texperiments/tibco-spotfire-datetime-pickers/</loc>
     <lastmod>2022-01-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/api/</loc>
+    <loc>http://10.10.10.82:1313/tags/api/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/api-security/</loc>
+    <loc>http://10.10.10.82:1313/tags/api-security/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/credit-cards/</loc>
+    <loc>http://10.10.10.82:1313/tags/credit-cards/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/event-driven/</loc>
+    <loc>http://10.10.10.82:1313/tags/event-driven/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/solution-architecture/tibco-payments-creditcard/</loc>
+    <loc>http://10.10.10.82:1313/solution-architecture/tibco-payments-creditcard/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/payments/</loc>
+    <loc>http://10.10.10.82:1313/tags/payments/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/predictive-analysis/</loc>
+    <loc>http://10.10.10.82:1313/tags/predictive-analysis/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/solution-architecture/</loc>
+    <loc>http://10.10.10.82:1313/solution-architecture/</loc>
     <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/solution-architecture/healthcareinteroperability/</loc>
+    <loc>http://10.10.10.82:1313/solution-architecture/healthcareinteroperability/</loc>
     <lastmod>2020-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/amazon-elastic-compute-cloud/</loc>
+    <loc>http://10.10.10.82:1313/tags/amazon-elastic-compute-cloud/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/aws/</loc>
+    <loc>http://10.10.10.82:1313/tags/aws/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/aws-ec2/</loc>
+    <loc>http://10.10.10.82:1313/tags/aws-ec2/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ec2/</loc>
+    <loc>http://10.10.10.82:1313/tags/ec2/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/elastic-compute-cloud/</loc>
+    <loc>http://10.10.10.82:1313/tags/elastic-compute-cloud/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/remote-connection/</loc>
+    <loc>http://10.10.10.82:1313/tags/remote-connection/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/remote-working/</loc>
+    <loc>http://10.10.10.82:1313/tags/remote-working/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/texperiments/rdp-ubuntu-aws/</loc>
+    <loc>http://10.10.10.82:1313/texperiments/rdp-ubuntu-aws/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ubuntu/</loc>
+    <loc>http://10.10.10.82:1313/tags/ubuntu/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ubuntu-server/</loc>
+    <loc>http://10.10.10.82:1313/tags/ubuntu-server/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/asyncapi/</loc>
+    <loc>http://10.10.10.82:1313/tags/asyncapi/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/enterprise-integration/</loc>
+    <loc>http://10.10.10.82:1313/tags/enterprise-integration/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/flogo/</loc>
+    <loc>http://10.10.10.82:1313/tags/flogo/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/solution-architecture/bw-asyncapi/</loc>
+    <loc>http://10.10.10.82:1313/solution-architecture/bw-asyncapi/</loc>
     <lastmod>2020-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bigdata/</loc>
+    <loc>http://10.10.10.82:1313/tags/bigdata/</loc>
     <lastmod>2019-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cloudera/</loc>
+    <loc>http://10.10.10.82:1313/tags/cloudera/</loc>
     <lastmod>2019-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/texperiments/clouderasandbox/</loc>
+    <loc>http://10.10.10.82:1313/texperiments/clouderasandbox/</loc>
     <lastmod>2019-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
+    <loc>http://10.10.10.82:1313/tags/docker/</loc>
     <lastmod>2019-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hortonworks-sandbox/</loc>
+    <loc>http://10.10.10.82:1313/tags/hortonworks-sandbox/</loc>
     <lastmod>2019-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/mahatechbharat/oauth/</loc>
+    <loc>http://10.10.10.82:1313/mahatechbharat/oauth/</loc>
     <lastmod>2019-08-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/solution-architecture/vectors/</loc>
+    <loc>http://10.10.10.82:1313/solution-architecture/vectors/</loc>
     <lastmod>2018-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://10.10.10.82:1313/categories/</loc>
   </url>
 </urlset>

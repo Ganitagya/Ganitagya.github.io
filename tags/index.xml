@@ -2,206 +2,206 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on akash_mahapatra</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>http://10.10.10.82:1313/tags/</link>
     <description>Recent content in Tags on akash_mahapatra</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://10.10.10.82:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Analytics</title>
-      <link>http://localhost:1313/tags/analytics/</link>
+      <link>http://10.10.10.82:1313/tags/analytics/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/analytics/</guid>
+      <guid>http://10.10.10.82:1313/tags/analytics/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Science</title>
-      <link>http://localhost:1313/tags/data-science/</link>
+      <link>http://10.10.10.82:1313/tags/data-science/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-science/</guid>
+      <guid>http://10.10.10.82:1313/tags/data-science/</guid>
       <description></description>
     </item>
     <item>
       <title>Data-Analytics</title>
-      <link>http://localhost:1313/tags/data-analytics/</link>
+      <link>http://10.10.10.82:1313/tags/data-analytics/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-analytics/</guid>
+      <guid>http://10.10.10.82:1313/tags/data-analytics/</guid>
       <description></description>
     </item>
     <item>
       <title>Data-Visualization</title>
-      <link>http://localhost:1313/tags/data-visualization/</link>
+      <link>http://10.10.10.82:1313/tags/data-visualization/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-visualization/</guid>
+      <guid>http://10.10.10.82:1313/tags/data-visualization/</guid>
       <description></description>
     </item>
     <item>
       <title>Spotfire</title>
-      <link>http://localhost:1313/tags/spotfire/</link>
+      <link>http://10.10.10.82:1313/tags/spotfire/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/spotfire/</guid>
+      <guid>http://10.10.10.82:1313/tags/spotfire/</guid>
       <description></description>
     </item>
     <item>
       <title>Tibco</title>
-      <link>http://localhost:1313/tags/tibco/</link>
+      <link>http://10.10.10.82:1313/tags/tibco/</link>
       <pubDate>Mon, 31 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tibco/</guid>
+      <guid>http://10.10.10.82:1313/tags/tibco/</guid>
       <description></description>
     </item>
     <item>
       <title>API</title>
-      <link>http://localhost:1313/tags/api/</link>
+      <link>http://10.10.10.82:1313/tags/api/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/api/</guid>
+      <guid>http://10.10.10.82:1313/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>API Security</title>
-      <link>http://localhost:1313/tags/api-security/</link>
+      <link>http://10.10.10.82:1313/tags/api-security/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/api-security/</guid>
+      <guid>http://10.10.10.82:1313/tags/api-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Credit-Cards</title>
-      <link>http://localhost:1313/tags/credit-cards/</link>
+      <link>http://10.10.10.82:1313/tags/credit-cards/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/credit-cards/</guid>
+      <guid>http://10.10.10.82:1313/tags/credit-cards/</guid>
       <description></description>
     </item>
     <item>
       <title>Event-Driven</title>
-      <link>http://localhost:1313/tags/event-driven/</link>
+      <link>http://10.10.10.82:1313/tags/event-driven/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/event-driven/</guid>
+      <guid>http://10.10.10.82:1313/tags/event-driven/</guid>
       <description></description>
     </item>
     <item>
       <title>Payments</title>
-      <link>http://localhost:1313/tags/payments/</link>
+      <link>http://10.10.10.82:1313/tags/payments/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/payments/</guid>
+      <guid>http://10.10.10.82:1313/tags/payments/</guid>
       <description></description>
     </item>
     <item>
       <title>Predictive-Analysis</title>
-      <link>http://localhost:1313/tags/predictive-analysis/</link>
+      <link>http://10.10.10.82:1313/tags/predictive-analysis/</link>
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/predictive-analysis/</guid>
+      <guid>http://10.10.10.82:1313/tags/predictive-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Amazon Elastic Compute Cloud</title>
-      <link>http://localhost:1313/tags/amazon-elastic-compute-cloud/</link>
+      <link>http://10.10.10.82:1313/tags/amazon-elastic-compute-cloud/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/amazon-elastic-compute-cloud/</guid>
+      <guid>http://10.10.10.82:1313/tags/amazon-elastic-compute-cloud/</guid>
       <description></description>
     </item>
     <item>
       <title>Aws</title>
-      <link>http://localhost:1313/tags/aws/</link>
+      <link>http://10.10.10.82:1313/tags/aws/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/aws/</guid>
+      <guid>http://10.10.10.82:1313/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Aws-Ec2</title>
-      <link>http://localhost:1313/tags/aws-ec2/</link>
+      <link>http://10.10.10.82:1313/tags/aws-ec2/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/aws-ec2/</guid>
+      <guid>http://10.10.10.82:1313/tags/aws-ec2/</guid>
       <description></description>
     </item>
     <item>
       <title>Ec2</title>
-      <link>http://localhost:1313/tags/ec2/</link>
+      <link>http://10.10.10.82:1313/tags/ec2/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ec2/</guid>
+      <guid>http://10.10.10.82:1313/tags/ec2/</guid>
       <description></description>
     </item>
     <item>
       <title>Elastic Compute Cloud</title>
-      <link>http://localhost:1313/tags/elastic-compute-cloud/</link>
+      <link>http://10.10.10.82:1313/tags/elastic-compute-cloud/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/elastic-compute-cloud/</guid>
+      <guid>http://10.10.10.82:1313/tags/elastic-compute-cloud/</guid>
       <description></description>
     </item>
     <item>
       <title>Remote Connection</title>
-      <link>http://localhost:1313/tags/remote-connection/</link>
+      <link>http://10.10.10.82:1313/tags/remote-connection/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/remote-connection/</guid>
+      <guid>http://10.10.10.82:1313/tags/remote-connection/</guid>
       <description></description>
     </item>
     <item>
       <title>Remote Working</title>
-      <link>http://localhost:1313/tags/remote-working/</link>
+      <link>http://10.10.10.82:1313/tags/remote-working/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/remote-working/</guid>
+      <guid>http://10.10.10.82:1313/tags/remote-working/</guid>
       <description></description>
     </item>
     <item>
       <title>Ubuntu</title>
-      <link>http://localhost:1313/tags/ubuntu/</link>
+      <link>http://10.10.10.82:1313/tags/ubuntu/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ubuntu/</guid>
+      <guid>http://10.10.10.82:1313/tags/ubuntu/</guid>
       <description></description>
     </item>
     <item>
       <title>Ubuntu-Server</title>
-      <link>http://localhost:1313/tags/ubuntu-server/</link>
+      <link>http://10.10.10.82:1313/tags/ubuntu-server/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ubuntu-server/</guid>
+      <guid>http://10.10.10.82:1313/tags/ubuntu-server/</guid>
       <description></description>
     </item>
     <item>
       <title>Asyncapi</title>
-      <link>http://localhost:1313/tags/asyncapi/</link>
+      <link>http://10.10.10.82:1313/tags/asyncapi/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/asyncapi/</guid>
+      <guid>http://10.10.10.82:1313/tags/asyncapi/</guid>
       <description></description>
     </item>
     <item>
       <title>Enterprise Integration</title>
-      <link>http://localhost:1313/tags/enterprise-integration/</link>
+      <link>http://10.10.10.82:1313/tags/enterprise-integration/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/enterprise-integration/</guid>
+      <guid>http://10.10.10.82:1313/tags/enterprise-integration/</guid>
       <description></description>
     </item>
     <item>
       <title>Flogo</title>
-      <link>http://localhost:1313/tags/flogo/</link>
+      <link>http://10.10.10.82:1313/tags/flogo/</link>
       <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/flogo/</guid>
+      <guid>http://10.10.10.82:1313/tags/flogo/</guid>
       <description></description>
     </item>
     <item>
       <title>Bigdata</title>
-      <link>http://localhost:1313/tags/bigdata/</link>
+      <link>http://10.10.10.82:1313/tags/bigdata/</link>
       <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/bigdata/</guid>
+      <guid>http://10.10.10.82:1313/tags/bigdata/</guid>
       <description></description>
     </item>
     <item>
       <title>Cloudera</title>
-      <link>http://localhost:1313/tags/cloudera/</link>
+      <link>http://10.10.10.82:1313/tags/cloudera/</link>
       <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cloudera/</guid>
+      <guid>http://10.10.10.82:1313/tags/cloudera/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
+      <link>http://10.10.10.82:1313/tags/docker/</link>
       <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker/</guid>
+      <guid>http://10.10.10.82:1313/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Hortonworks Sandbox</title>
-      <link>http://localhost:1313/tags/hortonworks-sandbox/</link>
+      <link>http://10.10.10.82:1313/tags/hortonworks-sandbox/</link>
       <pubDate>Tue, 03 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hortonworks-sandbox/</guid>
+      <guid>http://10.10.10.82:1313/tags/hortonworks-sandbox/</guid>
       <description></description>
     </item>
   </channel>

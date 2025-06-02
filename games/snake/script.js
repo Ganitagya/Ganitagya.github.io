@@ -31,6 +31,110 @@ let specialFoodTimer = null;
 let lastPowerUpType = null;
 let consecutiveSameType = 0;
 
+// Sound effects
+let audioContext;
+let backgroundMusic = null;
+let isMusicPlaying = false;
+
+function startBackgroundMusic() {
+    try {
+        if (backgroundMusic) {
+            backgroundMusic.pause();
+            backgroundMusic.currentTime = 0;
+        }
+
+        backgroundMusic = new Audio('warm-chords.mp3');
+        backgroundMusic.loop = true;
+        backgroundMusic.volume = 0.3; // Set to 30% volume
+        backgroundMusic.play().catch(e => {
+            console.error('Error playing background music:', e);
+            // Try to play again after user interaction
+            document.addEventListener('click', () => {
+                backgroundMusic.play().catch(e => console.error('Failed to play background music:', e));
+            }, { once: true });
+        });
+        
+        isMusicPlaying = true;
+    } catch (e) {
+        console.error('Error starting background music:', e);
+    }
+}
+
+function stopBackgroundMusic() {
+    if (backgroundMusic) {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+        isMusicPlaying = false;
+    }
+}
+
+function playEatSound() {
+    try {
+        if (!audioContext) {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.type = 'sawtooth';
+        oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(200, audioContext.currentTime + 0.1);
+        
+        gainNode.gain.setValueAtTime(0.15, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+        
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 0.1);
+    } catch (e) {
+        console.error('Error playing eat sound:', e);
+    }
+}
+
+function playDeathSound() {
+    try {
+        if (!audioContext) {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.type = 'square';
+        oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+        oscillator.frequency.exponentialRampToValueAtTime(100, audioContext.currentTime + 0.5);
+        
+        const modulator = audioContext.createOscillator();
+        const modGain = audioContext.createGain();
+        modulator.connect(modGain);
+        modGain.connect(oscillator.frequency);
+        modulator.frequency.setValueAtTime(8, audioContext.currentTime);
+        modGain.gain.setValueAtTime(50, audioContext.currentTime);
+        
+        gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+        
+        oscillator.start();
+        modulator.start();
+        oscillator.stop(audioContext.currentTime + 0.5);
+        modulator.stop(audioContext.currentTime + 0.5);
+    } catch (e) {
+        console.error('Error playing death sound:', e);
+    }
+}
+
+function vibrate() {
+    if ('vibrate' in navigator) {
+        navigator.vibrate(20);
+    }
+}
+
 const POWER_UPS = {
     SHRINK: {
         type: 'shrink',
@@ -114,10 +218,7 @@ window.addEventListener('resize', () => {
 // --- Game Initialization and Control ---
 
 function initializeGame() {
-    // Clear the canvas completely
     ctx.clearRect(0, 0, canvasSize, canvasSize);
-    
-    // Draw the initial background
     ctx.fillStyle = '#f0f0f0';
     ctx.fillRect(0, 0, canvasSize, canvasSize);
     
@@ -148,7 +249,6 @@ function initializeGame() {
 function updatePowerUpDisplay() {
     activePowerUps.innerHTML = '';
     
-    // Group effects by type
     const effectsByType = new Map();
     activeEffects.forEach(effect => {
         if (!effectsByType.has(effect.type)) {
@@ -157,7 +257,6 @@ function updatePowerUpDisplay() {
         effectsByType.set(effect.type, effectsByType.get(effect.type) + 1);
     });
 
-    // Display extra lives count
     if (lives > 1) {
         const powerUp = document.createElement('div');
         powerUp.className = 'power-up extra-life';
@@ -165,15 +264,13 @@ function updatePowerUpDisplay() {
         activePowerUps.appendChild(powerUp);
     }
 
-    // Display other active effects
-    effectsByType.forEach((count, type) => {
+    effectsByType.forEach((_, type) => {
         if (type !== 'extra-life') {
             const powerUp = document.createElement('div');
             powerUp.className = `power-up ${type}`;
             powerUp.textContent = type === 'shrink' ? 'Small Snake' : type;
             activePowerUps.appendChild(powerUp);
             
-            // For shrink effect, remove the display after 5 seconds
             if (type === 'shrink') {
                 setTimeout(() => {
                     powerUp.remove();
@@ -256,34 +353,50 @@ startButton.addEventListener('click', () => {
         startButton.textContent = "Restart Game";
         initializeGame();
         startGameLoop();
+        startBackgroundMusic();
         // Start spawning special food
         setInterval(spawnSpecialFood, 15000); // Every 15 seconds
     } else {
         // If game is already running, just restart
         initializeGame();
         startGameLoop();
+        if (!isMusicPlaying) {
+            startBackgroundMusic();
+        }
     }
 });
 
 // Touch controls
 upButton.addEventListener('touchstart', (e) => {
     e.preventDefault();
-    if (direction !== 'down') direction = 'up';
+    if (direction !== 'down') {
+        direction = 'up';
+        vibrate();
+    }
 });
 
 downButton.addEventListener('touchstart', (e) => {
     e.preventDefault();
-    if (direction !== 'up') direction = 'down';
+    if (direction !== 'up') {
+        direction = 'down';
+        vibrate();
+    }
 });
 
 leftButton.addEventListener('touchstart', (e) => {
     e.preventDefault();
-    if (direction !== 'right') direction = 'left';
+    if (direction !== 'right') {
+        direction = 'left';
+        vibrate();
+    }
 });
 
 rightButton.addEventListener('touchstart', (e) => {
     e.preventDefault();
-    if (direction !== 'left') direction = 'right';
+    if (direction !== 'left') {
+        direction = 'right';
+        vibrate();
+    }
 });
 
 // Keyboard controls
@@ -313,7 +426,6 @@ function gameTick() {
 
     snake.unshift(head);
 
-    // Check for special food collision
     if (specialFood && head.x === specialFood.x && head.y === specialFood.y) {
         specialFood.effect();
         if (specialFood.type !== 'extra-life') {
@@ -332,10 +444,11 @@ function gameTick() {
             specialFoodTimer = null;
         }
         draw();
+        playEatSound();
         return;
     }
-    // Check for regular food collision
     else if (head.x === food.x && head.y === food.y) {
+        playEatSound();
         score += 10;
         scoreValue.textContent = score;
         generateFood();
@@ -347,14 +460,11 @@ function gameTick() {
         snake.pop();
     }
 
-    // Check for collision
     const hasCollision = checkCollision();
     if (hasCollision) {
         if (lives > 1) {
             lives--;
-            // Keep the snake's current size and position
             const currentSnake = [...snake];
-            // Move the snake back one step in the opposite direction
             const lastDirection = direction;
             switch (lastDirection) {
                 case 'up': currentSnake[0].y++; break;
@@ -365,6 +475,7 @@ function gameTick() {
             snake = currentSnake;
             updatePowerUpDisplay();
             draw();
+            playDeathSound();
             return;
         } else {
             gameOver();
@@ -583,9 +694,9 @@ function gameOver() {
         gameInterval = null;
     }
     gameStarted = false;
-    // Clear the canvas one final time
+    stopBackgroundMusic();
+    playDeathSound();
     ctx.clearRect(0, 0, canvasSize, canvasSize);
-    // Draw empty background
     ctx.fillStyle = '#f0f0f0';
     ctx.fillRect(0, 0, canvasSize, canvasSize);
     alert(`Game Over! Your score: ${score}`);

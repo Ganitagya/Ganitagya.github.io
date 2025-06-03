@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="Virtual Tennis - A fun browser-based tennis game">
+	<title>Virtual Tennis</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		html, body {
+			height: 100%;
+			overflow: hidden;
+			position: fixed;
+			width: 100%;
+		}
+
+		body {
+			font-family: 'Poppins', sans-serif;
+			background: #1a1a1a;
+			color: #ffffff;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem;
+			overflow-y: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.game-header {
+			text-align: center;
+			margin-bottom: 1rem;
+		}
+
+		.game-title {
+			font-size: 2rem;
+			color: #4CAF50;
+			margin-bottom: 0.5rem;
+			text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+		}
+
+		.game-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.5rem;
+			max-width: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+
+		#gameCanvas {
+			background: #000;
+			border-radius: 10px;
+			box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+			max-width: 100%;
+			height: auto;
+			aspect-ratio: 4/3;
+			touch-action: none;
+		}
+
+		.game-scores {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			max-width: 800px;
+			padding: 0 20px;
+			margin-bottom: 0.5rem;
+		}
+
+		.score-card {
+			background: rgba(76, 175, 80, 0.1);
+			border: 2px solid #4CAF50;
+			border-radius: 10px;
+			padding: 0.75rem;
+			width: 100%;
+			max-width: 800px;
+			text-align: center;
+		}
+
+		.score-card h2 {
+			color: #4CAF50;
+			margin-bottom: 0.5rem;
+			font-size: 1.2rem;
+		}
+
+		.player-score-display {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.player-name {
+			color: #4CAF50;
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+
+		.score {
+			color: white;
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		.player-form {
+			background: rgba(76, 175, 80, 0.1);
+			border: 2px solid #4CAF50;
+			border-radius: 10px;
+			padding: 1.5rem;
+			margin-bottom: 1rem;
+			text-align: center;
+			max-width: 400px;
+			width: 100%;
+		}
+
+		.player-form h2 {
+			color: #4CAF50;
+			margin-bottom: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.input-group {
+			margin-bottom: 1rem;
+		}
+
+		.input-group label {
+			display: block;
+			margin-bottom: 0.5rem;
+			color: #ffffff;
+		}
+
+		.input-group input {
+			width: 100%;
+			padding: 8px;
+			border: 2px solid #4CAF50;
+			border-radius: 5px;
+			background: rgba(255, 255, 255, 0.1);
+			color: #ffffff;
+			font-family: 'Poppins', sans-serif;
+			font-size: 1rem;
+		}
+
+		.start-button {
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			font-size: 1rem;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.start-button:hover {
+			background-color: #45a049;
+		}
+
+		.game-footer {
+			margin-top: 1rem;
+			text-align: center;
+			font-size: 0.9rem;
+		}
+
+		.game-footer a {
+			color: #4CAF50;
+			text-decoration: none;
+			font-weight: 600;
+		}
+
+		.winner-announcement {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			z-index: 1000;
+			animation: winnerPulse 1.5s infinite;
+		}
+
+		.winner-name {
+			font-size: 4rem;
+			color: #4CAF50;
+			text-shadow: 0 0 10px rgba(76, 175, 80, 0.5),
+						 0 0 20px rgba(76, 175, 80, 0.3),
+						 0 0 30px rgba(76, 175, 80, 0.2);
+			margin-bottom: 1rem;
+		}
+
+		.winner-text {
+			font-size: 2rem;
+			color: #ffffff;
+			text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+		}
+
+		.firework {
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			animation: firework 1s ease-out infinite;
+		}
+
+		@keyframes winnerPulse {
+			0% { transform: translate(-50%, -50%) scale(1); }
+			50% { transform: translate(-50%, -50%) scale(1.05); }
+			100% { transform: translate(-50%, -50%) scale(1); }
+		}
+
+		@keyframes firework {
+			0% {
+				transform: translate(var(--x), var(--y));
+				opacity: 1;
+				width: 5px;
+				height: 5px;
+			}
+			100% {
+				transform: translate(var(--x), var(--y)) scale(20);
+				opacity: 0;
+				width: 2px;
+				height: 2px;
+			}
+		}
+
+		.game-over-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.8);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 999;
+		}
+
+		.score-value {
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: white;
+		}
+
+		.current-set {
+			font-size: 1.2rem;
+			color: #4CAF50;
+			margin-top: 0.5rem;
+			font-weight: 600;
+		}
+
+		@media (max-width: 600px) {
+			body {
+				padding: 0.5rem;
+			}
+
+			.game-title {
+				font-size: 1.5rem;
+			}
+
+			.player-name {
+				font-size: 1rem;
+			}
+
+			.score {
+				font-size: 1.2rem;
+			}
+
+			.score-card h2 {
+				font-size: 1rem;
+			}
+
+			.game-scores {
+				padding: 0 10px;
+			}
+
+			.score-card {
+				padding: 0.5rem;
+			}
+		}
+
+		@media (orientation: landscape) and (max-height: 500px) {
+			body {
+				padding: 0.5rem;
+				overflow: hidden;
+			}
+
+			.game-container {
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			#gameCanvas {
+				height: 80vh;
+				width: auto;
+				max-height: calc(100vh - 100px);
+			}
+
+			.game-scores {
+				margin-bottom: 0.25rem;
+			}
+
+			.score-card {
+				padding: 0.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="game-header">
+		<h1 class="game-title">Virtual Tennis</h1>
+	</div>
+
+	<div class="player-form" id="playerForm">
+		<h2>Enter Your Name</h2>
+		<div class="input-group">
+			<label for="playerName">Player Name:</label>
+			<input type="text" id="playerName" placeholder="Enter your name" required>
+		</div>
+		<button id="startButton" class="start-button">Start Game</button>
+	</div>
+
+	<div class="game-container" style="display: none;" id="gameContainer">
+		<div class="game-scores">
+			<div class="player-score-display">
+				<span id="player1Name" class="player-name">Player 1</span>
+				<span id="player1Score" class="score">0</span>
+			</div>
+			<div class="player-score-display">
+				<span class="player-name">Computer</span>
+				<span id="player2Score" class="score">0</span>
+			</div>
+		</div>
+		<canvas id="gameCanvas" width="800" height="600"></canvas>
+		<div class="score-card">
+			<h2>Sets Score</h2>
+			<div class="player-score">
+				<div class="score-value" id="setsScore">0 - 0</div>
+				<div class="current-set" id="currentSet">Set 1</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="game-footer">
+		<p>Click <a href="https://github.com/Ganitagya" target="_blank">here</a> to get me a coffee sometime!!!.</p>
+	</div>
+
+	<script src="game.js"></script>
+</body>
+</html> 

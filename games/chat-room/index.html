@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>WebRTC Chat</h1>
+        <div class="input-group">
+            <label for="username">Your Name</label>
+            <input type="text" id="username" placeholder="Enter your name">
+        </div>
+        <div class="button-group">
+            <button class="create-btn" onclick="createRoom()">Create Room</button>
+            <button class="join-btn" onclick="showJoinSection()">Join Room</button>
+        </div>
+        <div id="joinSection" class="join-section">
+            <div class="input-group">
+                <label for="roomId">Room ID</label>
+                <input type="text" id="roomId" placeholder="Enter room ID">
+            </div>
+            <button class="create-btn" onclick="joinRoom()">Join</button>
+        </div>
+    </div>
+
+    <script>
+        function showJoinSection() {
+            document.getElementById('joinSection').classList.add('active');
+        }
+
+        function generateRoomId() {
+            return Math.random().toString(36).substring(2, 8).toUpperCase();
+        }
+
+        function createRoom() {
+            const username = document.getElementById('username').value.trim();
+            if (!username) {
+                alert('Please enter your name');
+                return;
+            }
+            
+            const roomId = generateRoomId();
+            openChatRoom(username, roomId, true);
+        }
+
+        function joinRoom() {
+            const username = document.getElementById('username').value.trim();
+            const roomId = document.getElementById('roomId').value.trim();
+            
+            if (!username || !roomId) {
+                alert('Please enter both your name and room ID');
+                return;
+            }
+            
+            openChatRoom(username, roomId, false);
+        }
+
+        function openChatRoom(username, roomId, isHost) {
+            const chatUrl = `chat.html?username=${encodeURIComponent(username)}&roomId=${encodeURIComponent(roomId)}&isHost=${isHost}`;
+            window.location.href = chatUrl;
+        }
+    </script>
+</body>
+</html> 

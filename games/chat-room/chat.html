@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body class="chat-page">
+    <div class="chat-container">
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="room-info">
+                    Room: <span id="roomId"></span>
+                </div>
+                <div class="user-info">
+                    You: <span id="username"></span>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be added here -->
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button onclick="sendMessage()" class="send-button">➤</button>
+            </div>
+        </div>
+        
+        <div class="online-users">
+            <h3>Online Users</h3>
+            <ul id="usersList">
+                <!-- Online users will be added here -->
+            </ul>
+        </div>
+    </div>
+    <script src="chat.js"></script>
+</body>
+</html> 

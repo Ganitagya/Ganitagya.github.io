@@ -15,17 +15,23 @@ let username;
 let roomId;
 let mqttClient;
 let connectedUsers = new Set();
+let userListSyncInterval;
 
 // Initialize the chat room
 function initializeChat() {
+    console.log('Initializing chat...');
     initializeMQTT();
     // Add current user to the list
     addUserToList(username);
     connectedUsers.add(username);
+    
+    // Start periodic user list sync
+    userListSyncInterval = setInterval(syncUserList, 5000);
 }
 
 // Initialize MQTT connection
 function initializeMQTT() {
+    console.log('Connecting to MQTT broker...');
     mqttClient = mqtt.connect(MQTT_BROKER);
     
     mqttClient.on('connect', () => {
@@ -40,11 +46,18 @@ function initializeMQTT() {
                     username: username,
                     roomId: roomId
                 });
+            } else {
+                console.error('Error subscribing to topic:', err);
             }
         });
     });
 
+    mqttClient.on('error', (err) => {
+        console.error('MQTT Error:', err);
+    });
+
     mqttClient.on('message', (topic, message) => {
+        console.log('Received MQTT message:', message.toString());
         const data = JSON.parse(message.toString());
         handleSignalingMessage(data);
     });
@@ -52,11 +65,20 @@ function initializeMQTT() {
 
 // Send signaling message
 function sendSignalingMessage(message) {
+    console.log('Sending signaling message:', message);
     mqttClient.publish(MQTT_TOPIC, JSON.stringify({
         ...message,
         from: username,
         roomId: roomId
     }));
+}
+
+// Sync user list across all peers
+function syncUserList() {
+    sendSignalingMessage({
+        type: 'user-list-sync',
+        users: Array.from(connectedUsers)
+    });
 }
 
 // Handle incoming signaling messages
@@ -79,7 +101,33 @@ function handleSignalingMessage(data) {
         case 'leave':
             handleUserLeave(data);
             break;
+        case 'user-list-sync':
+            handleUserListSync(data);
+            break;
     }
+}
+
+// Handle user list sync
+function handleUserListSync(data) {
+    if (data.from === username) return; // Ignore own sync message
+    
+    const remoteUsers = new Set(data.users);
+    
+    // Add users that are in remote list but not in local list
+    remoteUsers.forEach(user => {
+        if (!connectedUsers.has(user) && user !== username) {
+            addUserToList(user);
+            connectedUsers.add(user);
+        }
+    });
+    
+    // Remove users that are in local list but not in remote list
+    connectedUsers.forEach(user => {
+        if (!remoteUsers.has(user) && user !== username) {
+            removeUserFromList(user);
+            connectedUsers.delete(user);
+        }
+    });
 }
 
 // Handle user joining
@@ -111,15 +159,20 @@ function handleUserJoin(data) {
 
 // Create peer connection
 function createPeerConnection(peerId) {
+    console.log('Creating peer connection for:', peerId);
     const peerConnection = new RTCPeerConnection(configuration);
     
     // Create data channel
-    const dataChannel = peerConnection.createDataChannel('chat');
+    const dataChannel = peerConnection.createDataChannel('chat', {
+        ordered: true,
+        reliable: true
+    });
     setupDataChannel(dataChannel, peerId);
 
     // Handle ICE candidates
     peerConnection.onicecandidate = (event) => {
         if (event.candidate) {
+            console.log('New ICE candidate:', event.candidate);
             sendSignalingMessage({
                 type: 'ice-candidate',
                 to: peerId,
@@ -130,9 +183,17 @@ function createPeerConnection(peerId) {
 
     // Handle connection state changes
     peerConnection.onconnectionstatechange = () => {
-        if (peerConnection.connectionState === 'disconnected') {
+        console.log('Connection state changed:', peerConnection.connectionState);
+        if (peerConnection.connectionState === 'disconnected' || 
+            peerConnection.connectionState === 'failed' || 
+            peerConnection.connectionState === 'closed') {
             handleUserLeave({ from: peerId });
         }
+    };
+
+    // Handle ICE connection state changes
+    peerConnection.oniceconnectionstatechange = () => {
+        console.log('ICE connection state:', peerConnection.iceConnectionState);
     };
 
     return peerConnection;
@@ -143,64 +204,88 @@ function setupDataChannel(channel, peerId) {
     channel.onopen = () => {
         console.log(`Data channel opened with ${peerId}`);
         peers[peerId].dataChannel = channel;
-        if (!connectedUsers.has(peerId)) {
-            addUserToList(peerId);
-            connectedUsers.add(peerId);
-        }
+        
+        // Sync user list when data channel opens
+        syncUserList();
     };
 
     channel.onclose = () => {
         console.log(`Data channel closed with ${peerId}`);
         delete peers[peerId].dataChannel;
-        if (connectedUsers.has(peerId)) {
-            removeUserFromList(peerId);
-            connectedUsers.delete(peerId);
-        }
+    };
+
+    channel.onerror = (error) => {
+        console.error(`Data channel error with ${peerId}:`, error);
     };
 
     channel.onmessage = (event) => {
-        const data = JSON.parse(event.data);
-        if (data.type === 'chat') {
-            addMessage(data.from, data.message, false);
+        console.log('Received message on data channel:', event.data);
+        try {
+            const data = JSON.parse(event.data);
+            if (data.type === 'chat') {
+                addMessage(data.from, data.message, false);
+            }
+        } catch (error) {
+            console.error('Error parsing message:', error);
         }
     };
 }
 
 // Handle incoming offer
 function handleOffer(data) {
+    console.log('Handling offer from:', data.from);
     const peerConnection = createPeerConnection(data.from);
     peers[data.from] = peerConnection;
 
     // Set up data channel
     peerConnection.ondatachannel = (event) => {
+        console.log('Received data channel from:', data.from);
         setupDataChannel(event.channel, data.from);
     };
 
     peerConnection.setRemoteDescription(new RTCSessionDescription(data.sdp))
-        .then(() => peerConnection.createAnswer())
-        .then(answer => peerConnection.setLocalDescription(answer))
         .then(() => {
+            console.log('Remote description set, creating answer');
+            return peerConnection.createAnswer();
+        })
+        .then(answer => {
+            console.log('Answer created, setting local description');
+            return peerConnection.setLocalDescription(answer);
+        })
+        .then(() => {
+            console.log('Sending answer to:', data.from);
             sendSignalingMessage({
                 type: 'answer',
                 to: data.from,
                 sdp: peerConnection.localDescription
             });
+        })
+        .catch(error => {
+            console.error('Error handling offer:', error);
         });
 }
 
 // Handle incoming answer
 function handleAnswer(data) {
+    console.log('Handling answer from:', data.from);
     const peerConnection = peers[data.from];
     if (peerConnection) {
-        peerConnection.setRemoteDescription(new RTCSessionDescription(data.sdp));
+        peerConnection.setRemoteDescription(new RTCSessionDescription(data.sdp))
+            .catch(error => {
+                console.error('Error setting remote description:', error);
+            });
     }
 }
 
 // Handle ICE candidates
 function handleIceCandidate(data) {
+    console.log('Handling ICE candidate from:', data.from);
     const peerConnection = peers[data.from];
     if (peerConnection) {
-        peerConnection.addIceCandidate(new RTCIceCandidate(data.candidate));
+        peerConnection.addIceCandidate(new RTCIceCandidate(data.candidate))
+            .catch(error => {
+                console.error('Error adding ICE candidate:', error);
+            });
     }
 }
 
@@ -223,21 +308,42 @@ function sendMessage() {
     const message = messageInput.value.trim();
     
     if (message) {
+        console.log('Sending message to peers:', message);
+        let messageSent = false;
+        let activePeers = 0;
+        
         // Send message to all peers
         Object.keys(peers).forEach(peerId => {
             const dataChannel = peers[peerId].dataChannel;
             if (dataChannel && dataChannel.readyState === 'open') {
-                dataChannel.send(JSON.stringify({
-                    type: 'chat',
-                    from: username,
-                    message: message
-                }));
+                console.log('Sending to peer:', peerId);
+                try {
+                    dataChannel.send(JSON.stringify({
+                        type: 'chat',
+                        from: username,
+                        message: message
+                    }));
+                    messageSent = true;
+                    activePeers++;
+                } catch (error) {
+                    console.error('Error sending message to peer:', peerId, error);
+                }
+            } else {
+                console.log('Data channel not open for peer:', peerId, 'State:', dataChannel ? dataChannel.readyState : 'no channel');
             }
         });
+
+        if (!messageSent) {
+            console.log('No active peer connections');
+            addSystemMessage('No active connections. Waiting for peers to join...');
+        } else {
+            console.log(`Message sent to ${activePeers} peers`);
+        }
 
         // Add message to own chat
         addMessage(username, message, true);
         messageInput.value = '';
+        messageInput.focus();
     }
 }
 
@@ -246,11 +352,22 @@ function addMessage(sender, message, isSent = false) {
     const messagesDiv = document.getElementById('chatMessages');
     const messageElement = document.createElement('div');
     messageElement.className = `message ${isSent ? 'sent' : 'received'}`;
-    messageElement.innerHTML = `
-        <div class="message-header">${sender}</div>
-        <div>${message}</div>
-    `;
+    
+    // Create message header
+    const headerElement = document.createElement('div');
+    headerElement.className = 'message-header';
+    headerElement.textContent = sender;
+    
+    // Create message content
+    const contentElement = document.createElement('div');
+    contentElement.textContent = message;
+    
+    // Append elements
+    messageElement.appendChild(headerElement);
+    messageElement.appendChild(contentElement);
     messagesDiv.appendChild(messageElement);
+    
+    // Scroll to bottom
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
@@ -297,11 +414,22 @@ window.onload = () => {
     document.getElementById('username').textContent = username;
     document.getElementById('roomId').textContent = roomId;
 
+    // Focus the message input
+    const messageInput = document.getElementById('messageInput');
+    messageInput.focus();
+
+    // Add welcome message
+    addSystemMessage(`Welcome to room ${roomId}!`);
+    addSystemMessage(`You are logged in as ${username}`);
+
     initializeChat();
 };
 
 // Cleanup when page unloads
 window.onunload = () => {
+    if (userListSyncInterval) {
+        clearInterval(userListSyncInterval);
+    }
     if (mqttClient) {
         sendSignalingMessage({ type: 'leave' });
         mqttClient.end();

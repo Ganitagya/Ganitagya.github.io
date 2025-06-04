@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Chat Room</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
@@ -24,7 +24,7 @@
             </div>
             
             <div class="chat-input">
-                <input type="text" id="messageInput" placeholder="Type your message...">
+                <input type="text" id="messageInput" placeholder="Type your message..." onkeydown="if(event.key === 'Enter') { event.preventDefault(); sendMessage(); }">
                 <button onclick="sendMessage()" class="send-button">➤</button>
             </div>
         </div>
